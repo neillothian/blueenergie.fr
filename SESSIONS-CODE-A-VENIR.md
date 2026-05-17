@@ -31,8 +31,9 @@
 | Session 20 — Article aides 2026 | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 21 — Article batterie virtuelle JPME | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 22 — Article 3e (au choix) | ⬜ À faire | à créer |
+| Mini-session compression images | ⚠️ cwebp non installé sur Mac, à faire via squoosh.app | — |
 
-**Synthèse** : 8 sessions déployées (1, 2, 3, 4, 5, 6, Blog hub, Blog article 1, Blog article 2) sur ~22 prévues. **Session 18 à reprendre** (rendu visuel KO). Prochaines recommandées : **Session 14 (SEO technique — prompt prêt)**, puis Session 7 ou reprise Session 18.
+**Synthèse** : sessions 1-7, 14, 18 (correctif) + Blog hub + 2 articles blog = 11 sessions déployées sur ~22 prévues (mi-marathon). **Compression images en attente** (cwebp absent). Prochaines : sous-sessions 6-9 du marathon (partials, 4 pages internes, aides, hub zones) à relancer dans une 2e exécution.
 
 ---
 
