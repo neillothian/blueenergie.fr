@@ -60,6 +60,7 @@ Puis lis dans cet ordre, **intégralement** :
 2. `QUESTIONS-OUVERTES.md` — **cahier de décisions** (Q1→Q20 + constantes entreprise + décisions par session + risques juridiques)
 3. `SESSIONS-CODE-A-VENIR.md` — section « État d'avancement » en haut (table de statut Session 1→22)
 4. `ACTIONS-NEIL.md` — actions externes en attente côté Neil (logos, clés API, photos)
+5. **`note et idees site web - brouillon`** — **brouillon personnel de Neil** (gitignoré, local uniquement). Format libre, non structuré, peut contenir : remarques sur le rendu actuel, idées de fonctionnalités, demandes ad hoc, retours visuels, priorités du moment, points qui l'agacent. **Lecture obligatoire — c'est la voix la plus à jour de Neil sur le projet.** Lis-le via `Read` avec le chemin absolu (le nom contient des espaces, à quoter dans les commandes shell). Extrais-en les **points actionnables** que tu intègreras dans ta proposition de prochaine action. Si une remarque contredit une décision figée dans `QUESTIONS-OUVERTES.md`, signale-le à Neil (« je vois dans ton brouillon X, mais le cahier de décisions a figé Y — tu confirmes le changement ? »).
 
 Lecture rapide / scan uniquement (pas besoin d'en mémoriser le détail) :
 - `CHECKLIST-POST-DEPLOI.md` — procédure de vérif post-upload
@@ -115,13 +116,15 @@ Cette vérif te permet de détecter rapidement :
 
 ### Étape 4 — Synthèse à Neil
 
-Réponds à Neil avec **3 à 5 lignes maximum** :
+Réponds à Neil avec **4 à 6 lignes maximum** :
 
-1. **Briefing fait** : « J'ai lu ETAT-PROJET, QUESTIONS-OUVERTES, SESSIONS-CODE-A-VENIR, ACTIONS-NEIL ; git log + status ; dropzone ; vérif live des [N] pages publiques. »
+1. **Briefing fait** : « J'ai lu ETAT-PROJET, QUESTIONS-OUVERTES, SESSIONS-CODE-A-VENIR, ACTIONS-NEIL, brouillon perso ; git log + status ; dropzone ; vérif live des [N] pages publiques. »
 2. **État** : « X sessions déployées en prod (1, 2, 3, ...). Y prompt(s) prêt(s) à lancer. Z session(s) à reprendre. »
 3. **Divergences ETAT-PROJET vs prod détectées** (si y en a) : décrire en 1 phrase
-4. **Dropzone** : « N asset(s) en attente : [liste] » ou « vide »
-5. **Proposition** : la prochaine action recommandée (1 option claire) — selon le contexte :
+4. **Notes du brouillon** : extraire en 1-2 lignes les points actionnables trouvés (« tu mentionnes X et Y dans ton brouillon, à traiter ? »). Si brouillon vide ou rien d'actionnable : « brouillon : rien de nouveau à traiter ».
+5. **Dropzone** : « N asset(s) en attente : [liste] » ou « vide »
+6. **Proposition** : la prochaine action recommandée (1 option claire) — selon le contexte (en intégrant le brouillon) :
+   - Si le brouillon contient une demande prioritaire / urgente → la traiter avant le reste
    - Si MARATHON est en cours et partiellement livré → proposer de continuer là où ça s'est arrêté
    - Si tous les prompts prêts ont été déployés → proposer la prochaine session ou un audit
    - Si dropzone non vide → proposer l'intégration des assets
@@ -210,7 +213,7 @@ Si `ls _dropzone/` montre des fichiers (hors README et corbeille) :
 | `PROMPT-PASSATION.md` | **Ce fichier** — reprise de rôle superviseur | Évolution du process superviseur |
 | `PROMPT-SESSION-*.md` | Prompts dev archivés / à lancer | Création par superviseur |
 | `audit-blueenergie.md` / `PLAN-REFONTE-SITE.md` / `WIREFRAMES-PAGES.md` | Documents initiaux de cadrage | Référence, rarement modifiés |
-| `note et idees site web - brouillon` | **Brouillon perso Neil**, gitignoré, à consulter au besoin | Jamais (lecture seule) |
+| `note et idees site web - brouillon` | **Brouillon perso Neil** (gitignoré, local, format libre) — voix la plus à jour sur remarques, idées, demandes ad hoc, priorités du moment | **Lecture obligatoire au démarrage** ; jamais d'écriture dedans (lecture seule) |
 
 ## Action immédiate à ton premier message
 
