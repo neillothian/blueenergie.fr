@@ -1,4 +1,4 @@
-# État du projet blueenergie.fr — 2026-05-17
+# État du projet blueenergie.fr — 2026-05-17 (Session 4 déployée)
 
 > Snapshot consolidé pour reprise du pilotage en nouvelle session.
 > Ce fichier est la **première lecture obligatoire** de tout nouveau superviseur (humain ou Claude).
@@ -30,12 +30,12 @@
 - Sessions 1+2+3 (correctifs HTML critiques, page `/merci.html`, carte OpenStreetMap)
 - Session 6 (catalogue matériel JA Solar / Solplanet / K2 / Tigo + badge prix batterie « < 300 €/kWh »)
 - Session Blog (hub `/blog/` + 2 articles : aides 2026, batteries virtuelles JPME)
+- Session 4 (mentions légales + CGV + politique de confidentialité + liens footer sur 5 pages) — vérifié live 2026-05-17
 
 ⬜ **À faire en priorité** :
-- Session 4 (mentions légales / CGV / RGPD) — débloquée
+- Session 5 (bandeau cookies tarteaucitron) — débloquée, recommandée après Session 4
 - Session 18 (bandeau confiance RGE + décennale) — débloquée
 - Session 14 (JSON-LD Organization + sitemap.xml + robots.txt) — recommandé après blog
-- Session 5 (bandeau cookies tarteaucitron) — autonome
 
 Détail complet : `SESSIONS-CODE-A-VENIR.md` (bloc « État d'avancement » en haut du fichier).
 
