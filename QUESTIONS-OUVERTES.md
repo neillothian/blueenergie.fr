@@ -187,16 +187,31 @@
 | - | Représentant légal | Neil Lothian, Président (idem) |
 | - | Tél | 07 61 50 43 85 (idem) |
 | Q1 | Hébergeur | **Hostinger** (validé 17/05) — accès FTP/SFTP à confirmer si besoin Session 17 |
-| Q2 | RGE | ⚠️ Neil a dit « ne pas le mettre » → **à reclarifier** (a-t-il un RGE ou pas ?). Si pas de RGE, retirer toutes mentions d'aides du site. |
-| Q3 | TVA intra | ⚠️ Neil a dit « pas non plus » → **à reclarifier**. SAS qui facture TVA 20 % = a obligatoirement un n° TVA intra. À calculer via VIES (https://ec.europa.eu/taxation_customs/vies/) avec SIREN 882483274. |
+| Q2 | RGE | ✅ **OUI, RGE QualiPV actif** (validé 17/05). Numéro **non divulgué publiquement** (préférence client). On affiche le **logo QualiPV** uniquement : `public_html/images/logo-qualipv.png` (fourni par Neil via `_dropzone`). Les mentions d'aides (MaPrimeRénov', CEE…) restent donc valides sur le site. Le numéro RGE pourra être communiqué à la demande (par email) si un prospect en a besoin pour son dossier d'aide. |
+| Q3 | TVA intra | ✅ **`FR25882483274`** (validé 17/05). Format conforme : FR + clé 25 + SIREN 882483274. À afficher tel quel dans la page mentions légales (Session 4). À vérifier une dernière fois sur VIES avant publication : https://ec.europa.eu/taxation_customs/vies/ |
+| Q4 | Place ID Google Business | ✅ **`ChIJHUKhFuCfDykRkkLTeN-wm3c`** (validé 17/05). Fiche : Blue Energie, 11 Chem. de Perouza, 74520 Savigny, France. À utiliser dans l'appel à l'API Google Places lors de la Session 17 (`places/ChIJHUKhFuCfDykRkkLTeN-wm3c`). |
+| Q5 | Réalisations Mylight | ✅ **Renommer en gardant les photos** (validé 17/05). On garde les 2 visuels (chantiers réels) mais on retire toute mention de marque « Mylight ». À renommer en termes génériques : « Panneaux full-black 400 Wc sur toiture asymétrique » et « Panneaux bifaciaux 425 Wc sur toit provençal ». À appliquer en Session 7 (refonte réalisations) + renommage des fichiers `images/Mylight-*.webp` → `images/realisation-fullblack-400wc.webp` et `images/mylight-bifaciaux-425Wc-*.webp` → `images/realisation-bifaciaux-425wc.webp` (avec mise à jour des références HTML/CSS). |
+| Q6 | Photos chantiers réels | ⏳ **À déposer dans `_dropzone/`** (validé 17/05). Neil va y mettre 5-10 photos HD. Format attendu : toiture extérieur + coffret/onduleur intérieur. Métadonnées attendues côté Neil (ville approx, année, matériel posé) à transmettre en chat au moment du dépôt. À intégrer dans la galerie Session 7 et la page réalisations Session 12. Si rien déposé d'ici Session 7 → on code avec placeholders, remplacement plus tard. |
+| Q7 | Témoignage REGHEM | ✅ **Non utilisé** (validé 17/05). Pas de témoignage nominal sur le site. La preuve sociale viendra **exclusivement des avis Google** intégrés via l'API Places en Session 17 (Place ID `ChIJHUKhFuCfDykRkkLTeN-wm3c`). Avantage : 100% authentique, 0% friction client, mise à jour automatique. |
+| Q12 | Villes SEO (Session 16) | ✅ **15 pages géolocalisées** (validé 17/05). Structure en 3 tiers : **(A) 5 villes hub** (contenu riche 600-800 mots, photos, témoignage local, étude de cas) : Annecy, Annemasse, Saint-Julien-en-Genevois, Chambéry, La Roche-sur-Foron. **(B) 6 villages hyperlocaux Genevois** (contenu court 300-400 mots, mention spécificités locales : architecture, exposition, urbanisme) : Vers, Vulbens, Valleiry, Archamps, Feigères, Crusseilles. **(C) 4 villes secondaires** (contenu moyen 400-500 mots) : Thonon-les-Bains, Aix-les-Bains, Cluses, Bonneville. Grenoble et Albertville **retirés** (trop loin / concurrence trop forte). URL pattern proposé : `/installateur-panneau-solaire-{ville-slug}.html`. |
 | Q11 | Email contact | Reste `neil.lothian@blueenergie.fr` (validé 17/05) — risque spam noté, mais c'est le choix du client |
 
 ---
 
-## Prochaine action attendue de toi
+## Prochaine action attendue de toi (état 2026-05-17)
 
-Pour démarrer la **Session 1** je n'ai besoin de RIEN. On peut lancer dès que tu valides ce plan.
+✅ Sessions 1, 2, 3, 6 et Blog déployées.
 
-**Avant Session 4 (mentions légales) il faut reclarifier :**
-- **RGE** : oui ou non ? Si oui, me donner le numéro exact pour l'afficher (c'est ton argument commercial #1). Si non, on retire toutes les mentions d'aides du site.
-- **TVA intra** : je peux la calculer moi-même via le portail VIES européen avec ton SIREN 882483274 — tu m'autorises à le faire pendant la Session 4 ?
+**Pour débloquer Session 4 (mentions légales)** :
+- ✅ RGE : confirmé (logo QualiPV intégré, numéro privé sur demande)
+- ⏳ TVA intra : autoriser la nouvelle session à la récupérer via VIES (SIREN 882483274)
+
+**Pour débloquer Session 18 (bandeau confiance)** :
+- ✅ Logo QualiPV : déjà dans `public_html/images/logo-qualipv.png`
+- Reste à fournir (via `_dropzone/`) : logos JA Solar, Solplanet, K2, Tigo, QualitEnR si possible
+
+**Pour débloquer Session 17 (avis Google)** :
+- Q4 + Q10 : créer GBP si pas fait + clé Google Places API + Place ID
+
+**Pour débloquer Session 10 (formulaire + captcha)** :
+- Q9 : créer un compte hCaptcha et fournir la sitekey
