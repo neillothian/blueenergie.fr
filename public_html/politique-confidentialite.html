@@ -298,14 +298,9 @@
         }
     </style>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEG722VJTV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-JEG722VJTV');
-    </script>
+    <!-- Bandeau consentement cookies (tarteaucitron) -->
+    <script src="/assets/tarteaucitron/tarteaucitron.js"></script>
+    <script src="/assets/tarteaucitron/init.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -454,6 +449,7 @@
 
         <h2>9. Cookies</h2>
         <p>Le site <a href="https://blueenergie.fr">https://blueenergie.fr</a> utilise des cookies pour assurer son bon fonctionnement et, sous réserve de votre consentement, pour mesurer son audience.</p>
+        <p>Aucun cookie de mesure d'audience n'est déposé tant que vous n'avez pas exprimé votre consentement via le bandeau de cookies affiché lors de votre première visite. Vous pouvez modifier vos préférences à tout moment en cliquant sur le lien « Gérer mes cookies » en pied de page.</p>
         <table class="data-table">
             <thead>
                 <tr>
@@ -465,20 +461,20 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>_ga, _ga_*</td>
+                    <td>_ga, _ga_JEG722VJTV</td>
                     <td>Google Analytics 4</td>
-                    <td>Mesure d'audience</td>
+                    <td>Mesure d'audience (chargé uniquement si vous acceptez)</td>
                     <td>13 mois</td>
                 </tr>
                 <tr>
-                    <td>Cookie de consentement</td>
+                    <td>tarteaucitron</td>
                     <td>Blue Energie</td>
-                    <td>Mémoriser vos choix</td>
-                    <td>6 mois</td>
+                    <td>Mémoriser vos choix de consentement aux cookies</td>
+                    <td>1 an</td>
                 </tr>
             </tbody>
         </table>
-        <p>Vous pouvez à tout moment modifier vos préférences de cookies en cliquant sur le lien « Gérer mes cookies » présent en pied de page (à venir). En l'absence de bandeau de gestion des cookies au moment de votre visite, vous pouvez désactiver Google Analytics depuis les paramètres de votre navigateur ou installer l'extension officielle de désactivation : <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank">https://tools.google.com/dlpage/gaoptout</a></p>
+        <p>Vous pouvez à tout moment modifier vos préférences de cookies en cliquant sur le lien « Gérer mes cookies » présent en pied de page. En l'absence de bandeau de gestion des cookies au moment de votre visite, vous pouvez désactiver Google Analytics depuis les paramètres de votre navigateur ou installer l'extension officielle de désactivation : <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank">https://tools.google.com/dlpage/gaoptout</a></p>
 
         <h2>10. Modification de la présente politique</h2>
         <p>Blue Energie se réserve le droit de modifier la présente Politique de confidentialité à tout moment, notamment pour tenir compte d'évolutions législatives ou techniques. La date de dernière mise à jour figure en tête de document. Nous vous invitons à consulter régulièrement cette page.</p>
@@ -495,6 +491,8 @@
             <a href="/cgv.html">CGV</a>
             &nbsp;·&nbsp;
             <a href="/politique-confidentialite.html">Politique de confidentialité</a>
+            &nbsp;·&nbsp;
+            <a href="#tarteaucitron" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gérer mes cookies</a>
         </div>
     </footer>
 

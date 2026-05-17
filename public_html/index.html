@@ -629,16 +629,9 @@
             height: auto;
         }
     </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEG722VJTV">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JEG722VJTV');
-</script>
+<!-- Bandeau consentement cookies (tarteaucitron) -->
+<script src="/assets/tarteaucitron/tarteaucitron.js"></script>
+<script src="/assets/tarteaucitron/init.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -1106,6 +1099,8 @@
             <a href="/cgv.html" style="color:#4fc7ef; text-decoration:none;">CGV</a>
             &nbsp;·&nbsp;
             <a href="/politique-confidentialite.html" style="color:#4fc7ef; text-decoration:none;">Politique de confidentialité</a>
+            &nbsp;·&nbsp;
+            <a href="#tarteaucitron" style="color:#4fc7ef; text-decoration:none;" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gérer mes cookies</a>
         </div>
     </footer>
 
