@@ -19,3 +19,8 @@ Thumbs.db
 
 # Sauvegardes locales pré-session (filet de sécurité disque, pas pour l'historique git)
 *.backup-*
+
+# Dropzone — boîte aux lettres entrante utilisateur, contenu temporaire (logos, photos, PDF…)
+# On garde le README pour documenter la convention, on ignore tout le reste
+_dropzone/*
+!_dropzone/README.md
