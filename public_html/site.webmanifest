@@ -1,0 +1,24 @@
+{
+  "name": "Blue Energie",
+  "short_name": "Blue Energie",
+  "description": "Installateur photovoltaïque RGE QualiPV en Haute-Savoie",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#4fc7ef",
+  "background_color": "#ffffff",
+  "display": "browser",
+  "start_url": "/"
+}
