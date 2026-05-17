@@ -22,17 +22,17 @@
 | Session 11 — Multi-pages partials | ⬜ À faire | à créer |
 | Session 12 — Pages internes principales | ⬜ À faire | à créer |
 | Session 13 — Page aides 2026 | ⬜ À faire | à créer |
-| Session 14 — JSON-LD + sitemap + robots.txt | ⬜ À faire — **recommandé après blog** | à créer |
+| Session 14 — JSON-LD + sitemap + robots.txt | ⏳ Prompt prêt, à lancer | `PROMPT-SESSION-14.md` |
 | Session 15 — Hub zones + 1 page géo modèle | ⬜ À faire | à créer |
 | Session 16 — 9 autres pages géo | ⬜ À faire (besoin validation liste villes) | à créer |
 | Session 17 — Avis Google dynamiques | ⬜ À faire (besoin Place ID + clé API) | à créer |
-| Session 18 — Bandeau confiance RGE + décennale | ⏳ Prompt prêt, à lancer | `PROMPT-SESSION-18.md` |
+| Session 18 — Bandeau confiance RGE + décennale | ⚠️ Code déployé mais rendu KO — à reprendre (visuel/UX à diagnostiquer) | `PROMPT-SESSION-18.md` |
 | Session 19 — Hub blog + template | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 20 — Article aides 2026 | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 21 — Article batterie virtuelle JPME | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 22 — Article 3e (au choix) | ⬜ À faire | à créer |
 
-**Synthèse** : 8 sessions déployées (1, 2, 3, 4, 5, 6, Blog hub, Blog article 1, Blog article 2) sur ~22 prévues. Prochaines recommandées : **Session 18 (bandeau RGE)**, **Session 14 (SEO technique)**, **Session 7 (finition galerie)**.
+**Synthèse** : 8 sessions déployées (1, 2, 3, 4, 5, 6, Blog hub, Blog article 1, Blog article 2) sur ~22 prévues. **Session 18 à reprendre** (rendu visuel KO). Prochaines recommandées : **Session 14 (SEO technique — prompt prêt)**, puis Session 7 ou reprise Session 18.
 
 ---
 
