@@ -1,3 +1,50 @@
+# 🎓 Fiche de révision — Session 6 : mise à jour du catalogue matériel
+
+> À lire AVANT de lancer le prompt dans Claude Code. Objectif : comprendre ce que la session va faire et pourquoi, pas juste exécuter aveuglément.
+
+Le site mentionne aujourd'hui SolarEdge / Mylight / Esdec comme matériel installé. Or tous les devis 2025/2026 utilisent maintenant JA Solar / Solplanet / K2 / Tigo. C'est une incohérence majeure entre la communication et la réalité commerciale : un prospect qui compare le site et un devis voit deux gammes différentes. Cette session réécrit la section « matériel » de la page d'accueil, ajoute un argument prix fort sur la batterie (« moins de 300 €/kWh »), et neutralise les mentions Mylight dans les cartes réalisations.
+
+## Ce que tu vas voir passer dans le prompt
+
+- **Section HTML avec ID** : `<section class="section" id="materiel">`. L'ID sert d'ancre : un lien `href="/#materiel"` saute directement à cette section. Ne PAS le modifier sous peine de casser les menus.
+- **Variables CSS** : `var(--primary-blue)` et `var(--primary-orange)`. Ce sont les couleurs de la charte définies une seule fois en haut du `<style>`. On les RÉUTILISE partout pour rester cohérent.
+- **`loading="lazy"`** : attribut sur les `<img>` qui dit au navigateur « charge cette image seulement quand l'utilisateur s'en rapproche en scrollant ». Gain de perf, zéro risque.
+- **`grep` (commande shell)** : cherche un texte dans des fichiers. `grep -ni "solaredge"` = cherche « solaredge » sans tenir compte de la casse, et donne le numéro de ligne (`-n`). Sert à vérifier qu'aucune mention obsolète ne traîne.
+- **Argument commercial « < 300 €/kWh »** : badge orange + encart prix dégressif. C'est un différenciateur prix face au marché (500-800 €/kWh ailleurs) — chiffre validé par toi le 17/05/2026.
+- **iframe YouTube** : balise `<iframe>` qui embarque une vidéo YouTube directement dans la page. Les 4 iframes existantes pointaient vers SolarEdge/K2 — supprimées dans cette session, un commentaire HTML `<!-- TODO -->` est laissé pour plus tard.
+
+## Étapes clés du prompt (vue d'avion)
+
+1. Initialisation : todo list interne, backup `index.html.backup-pre-session6`, snapshot git si dispo.
+2. Lecture du contexte : section `#materiel` actuelle (lignes ~775-813), section `#realisations` (lignes ~815-874), wireframe matériel.
+3. Réécriture complète du contenu de la section `#materiel` : 4 cartes (JA Solar / Solplanet onduleur / Solplanet batterie / K2) + 1 carte option Tigo + 1 bloc « Pourquoi ces marques ». La balise `<section>` elle-même n'est PAS touchée.
+4. Retrait des iframes YouTube obsolètes (déjà géré par le remplacement, c'est une vérification).
+5. Mise à jour de 2 cartes Réalisations qui mentionnaient « Mylight » — texte neutralisé, noms de fichiers images CONSERVÉS (ne pas renommer, risque de casser le site). Ajout de `loading="lazy"` sur les autres images.
+6. Validation : grep pour vérifier qu'aucune mention « solaredge », « esdec », « mylight » (hors src d'images) ne subsiste, comptage balises, vérification que les IDs critiques sont préservés, validation W3C, commit git.
+
+## Pièges à anticiper
+
+- **Ne PAS renommer les fichiers WebP** : les images s'appellent encore `Mylight-crystal-400wc-...webp` etc. C'est volontaire — renommer casserait les chemins partout. Seul le TEXTE des cartes change, le `src=` reste.
+- **L'ID `id="materiel"`** doit être préservé. Si Claude Code le supprime ou le renomme par erreur, tous les liens du menu vers `#materiel` deviennent morts. C'est dans les interdictions, vérifie dans le rapport final.
+- **Le badge « MOINS DE 300 €/kWh »** est un engagement commercial fort. Si l'argument prix est faux ou défendable difficilement face à un client, demande à Claude Code de retirer le badge avant publication. Cette information engage ta crédibilité.
+- **Le bloc HTML à coller fait ~80 lignes** : Claude Code doit remplacer le contenu intérieur sans toucher à `<section class="section" id="materiel">` ni à `</section>`. Si tu vois une double balise ouvrante ou des balises orphelines dans le diff, c'est un signal d'erreur.
+
+## Mini-quiz d'auto-vérification
+
+1. Pourquoi le prompt insiste-t-il pour ne PAS renommer les fichiers images même si elles s'appellent encore « Mylight... » ?
+2. À quoi sert `var(--primary-orange)` dans le code, et que se passerait-il si quelqu'un décidait de changer la valeur de cette variable en haut du CSS ?
+3. Si après la session, `grep -c "<div" public_html/index.html` donne 102 et `grep -c "</div>" public_html/index.html` donne 101, qu'est-ce que ça signifie et pourquoi c'est un problème ?
+
+## Pour aller plus loin (optionnel)
+
+- Attribut `loading="lazy"` sur les images : https://developer.mozilla.org/fr/docs/Web/HTML/Element/img#loading
+- Variables CSS (custom properties) : https://developer.mozilla.org/fr/docs/Web/CSS/Using_CSS_custom_properties
+
+---
+
+
+
+
 # Prompt Session 6 — pour Claude Code
 
 > **Mise à jour du catalogue matériel : JA Solar / Solplanet / K2 / Tigo.**
