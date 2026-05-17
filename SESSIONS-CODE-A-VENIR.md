@@ -23,7 +23,7 @@
 | Session 12 — Pages internes principales | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-MARATHON.md` |
 | Session 13 — Page aides 2026 | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-MARATHON.md` |
 | Session 14 — JSON-LD + sitemap + robots.txt | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-14.md` |
-| Session 15 — Hub zones + 1 page géo modèle | ⬜ À faire | à créer |
+| Session 15 — Hub zones + 1 page géo modèle | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-MARATHON.md` |
 | Session 16 — 9 autres pages géo | ⬜ À faire (besoin validation liste villes) | à créer |
 | Session 17 — Avis Google dynamiques | ⬜ À faire (besoin Place ID + clé API) | à créer |
 | Session 18 — Bandeau confiance RGE + décennale | ✅ **DÉPLOYÉ** (correctif appliqué) | `PROMPT-SESSION-18.md` |
