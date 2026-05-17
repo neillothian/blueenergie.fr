@@ -74,7 +74,7 @@ L'ordre choisi minimise les dépendances :
 3. Lance Claude Code : `claude`
 4. Copie-colle tout ce qui est entre `=== DÉBUT PROMPT ===` et `=== FIN PROMPT ===`
 5. Laisse tourner. Le dev push après chaque sous-session, tu peux **uploader sur Hostinger au fil de l'eau** (un dossier par étape) sans attendre la fin.
-6. ⏸️ **Point d'arrêt obligatoire à mi-parcours** : le dev s'arrête après la sous-session 5 (Session 8) et te rend un **rapport intermédiaire** (5 sous-sessions livrées, état contexte, blocages éventuels). Tu valides la qualité, tu fais éventuellement quelques tests visuels rapides, puis tu relances un second prompt court (« continue la marathon, sous-sessions 6 à 9 ») pour la deuxième moitié.
+6. ⏸️ **Point d'arrêt obligatoire à mi-parcours** : le dev s'arrête après la sous-session 5 (Session 8) et te rend un **rapport intermédiaire** (5 sous-sessions livrées, état contexte, blocages éventuels). Tu valides la qualité, tu fais éventuellement quelques tests visuels rapides, puis **tu démarres une NOUVELLE session Claude Code** (`/clear` ou relance `claude` depuis zéro) et tu colles le **prompt de relance court** (cf. `PROMPT-SESSION-MARATHON-PART2.md` ou bloc dédié plus bas) pour enchaîner sous-sessions 6 à 9. Une nouvelle session = contexte vide = qualité de raisonnement maximale, et les fichiers déjà commit/push servent de mémoire persistante.
 7. **Si le dev s'arrête en cours** (avant ou après le checkpoint 5 obligatoire), son rapport listera précisément ce qui reste — on relancera un PROMPT-SESSION-MARATHON-2 avec uniquement les sous-sessions restantes.
 
 ---
@@ -486,7 +486,7 @@ Tu NE poursuis PAS avec la sous-session 6 dans cette exécution, même si tu te 
    - Rendu d'`index.html` identique à avant l'extraction CSS (pas de régression)
    - `https://blueenergie.fr/sitemap.xml` accessible
    - JSON-LD validé via https://validator.schema.org/ (au moins pour la home)
-4. Si tout OK → relancer Claude Code avec un prompt court : « Continue la Session MARATHON, sous-sessions 6 à 9 (puis 10-11 optionnelles si contexte ok), même règles ». Référence ce prompt pour les détails.
+4. Si tout OK → **démarrer une NOUVELLE session Claude Code** (`/clear` ou nouvelle invocation `claude` depuis zéro) et coller le prompt court présent dans `PROMPT-SESSION-MARATHON-PART2.md` (à la racine du repo). ⚠️ **NE PAS** continuer dans la même session que celle qui a fait les sous-sessions 1-5 — le but de l'arrêt est justement de repartir avec un contexte vide.
 5. Si KO → me lister les correctifs nécessaires, on relance un mini-prompt de fix avant d'enchaîner.
 
 ### Prochaine étape recommandée
