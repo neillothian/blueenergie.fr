@@ -21,7 +21,7 @@
 | Session 10 — Refonte formulaire + hCaptcha | ⬜ À faire (besoin sitekey hCaptcha) | à créer |
 | Session 11 — Multi-pages partials | ✅ **DÉPLOYÉ** (index uniquement, autres pages refactor ultérieur) | `PROMPT-SESSION-MARATHON.md` |
 | Session 12 — Pages internes principales | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-MARATHON.md` |
-| Session 13 — Page aides 2026 | ⬜ À faire | à créer |
+| Session 13 — Page aides 2026 | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-MARATHON.md` |
 | Session 14 — JSON-LD + sitemap + robots.txt | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-14.md` |
 | Session 15 — Hub zones + 1 page géo modèle | ⬜ À faire | à créer |
 | Session 16 — 9 autres pages géo | ⬜ À faire (besoin validation liste villes) | à créer |
