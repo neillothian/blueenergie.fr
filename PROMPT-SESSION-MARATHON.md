@@ -4,6 +4,8 @@
 
 Cette **méga-session** rassemble en un seul prompt l'enchaînement des 9 sessions de code autonomes restantes (celles qui ne dépendent pas de clés API ou d'assets que Neil doit encore fournir). Charge cumulée estimée : **10 à 14 heures de dev**, soit bien au-delà de ce qui rentre confortablement dans une seule session Claude Code (le contexte devient saturé, la qualité chute, le risque d'erreur monte). Pour rendre l'exercice viable, le prompt impose **un commit + push après chaque sous-session terminée** : le travail livré est préservé même si le dev doit s'arrêter en cours. Le dev a explicitement l'autorisation de **clôturer après n'importe quel checkpoint** en signalant ce qui reste — il vaut mieux livrer 5 sous-sessions propres que 9 bâclées.
 
+> ⏸️ **Arrêt obligatoire à mi-marathon (Checkpoint 5)** : le dev s'arrête systématiquement après la sous-session 5 (Session 8 — extraction CSS/JS), écrit un **rapport intermédiaire** et rend la main à Neil. C'est le point de revue qualité de la première moitié. Neil valide (ou demande des correctifs), puis relance un second prompt pour les sous-sessions 6 à 9 (+ optionnelles). On évite ainsi qu'une erreur de la première moitié se propage silencieusement dans la seconde.
+
 ## Stratégie d'exécution
 
 L'ordre choisi minimise les dépendances :
@@ -59,7 +61,7 @@ L'ordre choisi minimise les dépendances :
 
 # Prompt Session MARATHON — enchaînement final autonome
 
-> **Enchaîner 9 sous-sessions de dev (10-14h estimées) avec commit + push après chacune. Stratégie fail-soft : le dev s'arrête après n'importe quel checkpoint et signale ce qui reste si nécessaire.**
+> **Enchaîner 9 sous-sessions de dev (10-14h estimées) avec commit + push après chacune, en 2 exécutions séparées (1-5, puis 6-9). Stratégie fail-soft : le dev s'arrête après n'importe quel checkpoint et signale ce qui reste si nécessaire. ⏸️ Arrêt OBLIGATOIRE après la sous-session 5 pour rapport intermédiaire et revue user.**
 > Périmètre : ~25 fichiers HTML + 2 fichiers CSS/JS extraits + dossier `partials/` + dossier `zones/` + `sitemap.xml` + `robots.txt` + maj `SESSIONS-CODE-A-VENIR.md` à chaque étape.
 > Durée estimée : 10-14 h. Aucune question au user pendant l'exécution.
 
@@ -72,7 +74,8 @@ L'ordre choisi minimise les dépendances :
 3. Lance Claude Code : `claude`
 4. Copie-colle tout ce qui est entre `=== DÉBUT PROMPT ===` et `=== FIN PROMPT ===`
 5. Laisse tourner. Le dev push après chaque sous-session, tu peux **uploader sur Hostinger au fil de l'eau** (un dossier par étape) sans attendre la fin.
-6. **Si le dev s'arrête en cours**, son rapport listera précisément ce qui reste — on relancera un PROMPT-SESSION-MARATHON-2 avec uniquement les sous-sessions restantes.
+6. ⏸️ **Point d'arrêt obligatoire à mi-parcours** : le dev s'arrête après la sous-session 5 (Session 8) et te rend un **rapport intermédiaire** (5 sous-sessions livrées, état contexte, blocages éventuels). Tu valides la qualité, tu fais éventuellement quelques tests visuels rapides, puis tu relances un second prompt court (« continue la marathon, sous-sessions 6 à 9 ») pour la deuxième moitié.
+7. **Si le dev s'arrête en cours** (avant ou après le checkpoint 5 obligatoire), son rapport listera précisément ce qui reste — on relancera un PROMPT-SESSION-MARATHON-2 avec uniquement les sous-sessions restantes.
 
 ---
 
@@ -91,15 +94,17 @@ Tu es développeur web senior **polyvalent** (SEO technique, refactoring, templa
 
 Enchaîner **9 sous-sessions** dans l'ordre ci-dessous, avec **commit + push après chacune** (un commit = une sous-session = un message clair). Tu mets à jour `SESSIONS-CODE-A-VENIR.md` à chaque sous-session terminée (statut → ✅ DÉPLOYÉ).
 
+⏸️ **Arrêt obligatoire à mi-marathon (après la sous-session 5 / Session 8)** : tu t'arrêtes IMPÉRATIVEMENT au Checkpoint 5 (même si tu te sens parfaitement frais), tu écris le **rapport intermédiaire** (cf. section dédiée plus bas), et tu rends la main au user. Tu NE continues PAS avec la sous-session 6 dans la même exécution. Le user fera un point qualité avant de relancer un second prompt pour la deuxième moitié. Cet arrêt est non négociable — c'est un point de contrôle qualité, pas une suggestion.
+
 **Stratégie fail-soft** : si une sous-session pose un problème non résoluble en 15 min, tu la marques « ⚠️ Partiel — à reprendre » dans `SESSIONS-CODE-A-VENIR.md`, tu commit + push ce qui est fait, et tu passes à la suivante. Tu NE BLOQUES PAS l'exécution sur une difficulté isolée.
 
-**Stratégie checkpoint** : à partir de la 5e sous-session, **évalue ton propre état de contexte** avant de continuer. Si tu sens que la qualité de tes réponses commence à dégrader (oublis, hallucinations, lenteur), **arrête-toi proprement** au checkpoint courant, écris le rapport final avec ce qui reste, et termine. Mieux vaut 5 sous-sessions propres que 9 bâclées.
+**Stratégie checkpoint (sous-sessions 1 à 4)** : si la qualité de tes réponses commence à dégrader AVANT le checkpoint 5 obligatoire (oublis, hallucinations, lenteur), **arrête-toi proprement** au checkpoint courant, écris le rapport intermédiaire avec ce qui reste, et termine. Mieux vaut 3 sous-sessions propres que 5 bâclées.
 
-Durée estimée : 10-14 h. Aucune question au user.
+Durée estimée pour la première moitié (sous-sessions 1 à 5) : 5-7 h. Aucune question au user.
 
 ## Workflow obligatoire — Étape 0 : Initialisation (5 min)
 
-1. TodoWrite avec **11 tâches** : init, sous-session 14, 18-FIX, 7, compression, 8, 11, 12, 13, 15, rapport final
+1. TodoWrite avec **6 tâches pour cette exécution** : init, sous-session 14, 18-FIX, 7, compression, 8 + rapport intermédiaire (les sous-sessions 11/12/13/15 seront crées dans une seconde exécution après check-in user)
 2. `git pull origin main --rebase` — si échec : diagnostique, ne continue pas
 3. `git status` doit retourner « nothing to commit, working tree clean »
 4. Backup global du site avant la marathon :
@@ -427,11 +432,74 @@ git push origin main
 
 Maj `SESSIONS-CODE-A-VENIR.md` → ligne Session 8 = `✅ **DÉPLOYÉ** (partiel : index + merci, blog/légal hors scope) | PROMPT-SESSION-MARATHON.md`.
 
-**Checkpoint 5 → continue ou stop selon contexte.**
+---
+
+## ⏸️ CHECKPOINT 5 — ARRÊT OBLIGATOIRE MI-MARATHON
+
+Tu viens de boucler la **première moitié** du marathon (sous-sessions 1 à 5). **STOP IMPÉRATIF ICI.**
+
+Tu NE poursuis PAS avec la sous-session 6 dans cette exécution, même si tu te sens parfaitement frais. C'est un point de contrôle qualité non négociable : le user va vérifier visuellement le rendu de la première moitié (bandeau confiance, extraction CSS, sitemap) avant de relancer la deuxième moitié (partials + 4 pages internes + aides + zones). Si une erreur s'est glissée dans la première moitié, on la corrige ici, avant qu'elle ne contamine la suite.
+
+### Écris le rapport intermédiaire et termine
+
+```
+## Rapport intermédiaire — Session MARATHON (mi-parcours, après sous-session 5)
+
+### Sous-sessions terminées (1re moitié)
+- [ ] / [x] 1. Session 14 — JSON-LD + sitemap + robots.txt
+- [ ] / [x] 2. Session 18-FIX — bandeau confiance corrigé
+- [ ] / [x] 3. Session 7 — finition galerie + renommage Mylight
+- [ ] / [x] 4. Mini-compression images (N images compressées via cwebp, ou skip)
+- [ ] / [x] 5. Session 8 — extraction CSS/JS index + merci
+
+### Commits poussés
+- [hash court] Session 14 : ...
+- [hash court] Session 18 FIX : ...
+- [hash court] Session 7 : ...
+- [hash court] Mini-session compression : ... (ou « skip cwebp absent »)
+- [hash court] Session 8 : ...
+
+### État du repo
+- `git status` : working tree clean OUI / NON
+- Branche `main` poussée et synchronisée avec origin OUI / NON
+- Backup tar disponible dans /tmp : OUI / NON
+
+### Auto-évaluation contexte
+- Qualité de raisonnement perçue : 🟢 / 🟡 / 🔴
+- Symptômes éventuels (oublis, lenteur, hallucinations détectées et corrigées) : ...
+- Prêt à enchaîner la 2e moitié dans une nouvelle exécution ? OUI / NON
+
+### Blocages / points d'attention pour Neil
+- [Liste précise par sous-session, ou : aucun]
+- ⚠️ Partiels éventuels (sous-session marquée Partiel + raison + ce qui reste à faire)
+
+### À faire côté Neil AVANT de relancer la 2e moitié
+1. Téléverser sur Hostinger (ou laisser le push GitHub→FTP se déclencher) :
+   - `public_html/sitemap.xml`, `public_html/robots.txt`
+   - `public_html/assets/css/main.css` + `bandeau-confiance.css`
+   - `public_html/assets/js/main.js` (si créé)
+   - `public_html/index.html`, `public_html/merci.html` (mis à jour)
+   - Images compressées éventuelles
+2. Vider le cache Hostinger
+3. Vérifications visuelles rapides :
+   - Bandeau confiance désormais visible et propre sur https://blueenergie.fr/
+   - Rendu d'`index.html` identique à avant l'extraction CSS (pas de régression)
+   - `https://blueenergie.fr/sitemap.xml` accessible
+   - JSON-LD validé via https://validator.schema.org/ (au moins pour la home)
+4. Si tout OK → relancer Claude Code avec un prompt court : « Continue la Session MARATHON, sous-sessions 6 à 9 (puis 10-11 optionnelles si contexte ok), même règles ». Référence ce prompt pour les détails.
+5. Si KO → me lister les correctifs nécessaires, on relance un mini-prompt de fix avant d'enchaîner.
+
+### Prochaine étape recommandée
+2e moitié = Session 11 (partials) → Session 12 (4 pages internes) → Session 13 (aides + simu) → Session 15 (hub zones + Annecy). Estimation 5-7h supplémentaires.
+```
+
+Tu écris ce rapport en sortie console (texte affiché au user), tu marques la tâche TodoWrite « rapport intermédiaire » comme `completed`, **et tu termines ton exécution**. Tu ne passes PAS à la sous-session 6.
 
 ---
 
 ## SOUS-SESSION 6 — Session 11 : système de partials header/footer (~2 h)
+
+> ⚠️ Cette sous-session et les suivantes (6 à 9, plus optionnelles) ne sont exécutées **que lorsque le user relance explicitement le marathon avec un second prompt** après son check-in. Si tu lis cette section dans la même exécution que les sous-sessions 1-5, c'est que tu as raté le checkpoint 5 — arrête-toi immédiatement et écris le rapport intermédiaire.
 
 ### Travail
 
@@ -700,10 +768,11 @@ Format identique aux 2 articles existants (cf. `PROMPT-SESSION-BLOG.md`).
 
 | Sujet | Décision |
 |---|---|
-| Ordre des sous-sessions | 14 → 18-FIX → 7 → compression → 8 → 11 → 12 → 13 → 15 (+ 16, 22 optionnels) |
+| Ordre des sous-sessions | 14 → 18-FIX → 7 → compression → 8 → **STOP MI-MARATHON** → 11 → 12 → 13 → 15 (+ 16, 22 optionnels) |
 | Commit/push après chaque sous-session | Obligatoire — préserve le travail si arrêt en cours |
 | Stratégie fail-soft | Une sous-session bloquante → marquer ⚠️ Partiel + skip + continuer |
-| Arrêt prématuré | Autorisé après n'importe quel checkpoint ≥ 4 si contexte saturé |
+| **Arrêt mi-marathon (Checkpoint 5)** | **OBLIGATOIRE et non négociable** — rapport intermédiaire + main rendue au user après la sous-session 5, même si contexte encore frais |
+| Arrêt prématuré (avant CP5) | Autorisé après n'importe quel checkpoint ≥ 3 si contexte saturé |
 | Système de partials | `fetch()` JS, divs `#site-header` + `#site-footer`, fallback à vide acceptable (page reste utilisable) |
 | Pages géo Tier A/B/C | Cf. liste figée dans `QUESTIONS-OUVERTES.md` § Session 16 (pas Grenoble, pas Albertville) |
 | Bandeau confiance | Reste statique dans chaque page (PAS dans le partial header) — SEO important |
