@@ -5,6 +5,37 @@
 
 ---
 
+## État d'avancement (mise à jour 2026-05-17)
+
+| Session | Statut | Prompt source |
+|---|---|---|
+| Session 1 — Correctifs HTML critiques | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-1-2-3.md` |
+| Session 2 — Page /merci.html + GA4 | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-1-2-3.md` |
+| Session 3 — Remplacement Google Maps | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-1-2-3.md` |
+| Session 4 — Mentions légales / CGV / RGPD | ⏳ Prompt prêt, à lancer | `PROMPT-SESSION-4.md` |
+| Session 5 — Bandeau cookies tarteaucitron | ⬜ À faire — autonome | à créer |
+| Session 6 — Mise à jour catalogue matériel | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-6.md` |
+| Session 7 — Refonte galerie réalisations | ⬜ Partiellement traité dans Session 6 (textes neutralisés). Reste : `loading="lazy"` partout, logos Mylight retirés des images si besoin | à créer |
+| Session 8 — Extraction CSS/JS séparés | ⬜ À faire | à créer |
+| Session 9 — Optimisation images + favicon + meta | ⬜ À faire | à créer |
+| Session 10 — Refonte formulaire + hCaptcha | ⬜ À faire (besoin sitekey hCaptcha) | à créer |
+| Session 11 — Multi-pages partials | ⬜ À faire | à créer |
+| Session 12 — Pages internes principales | ⬜ À faire | à créer |
+| Session 13 — Page aides 2026 | ⬜ À faire | à créer |
+| Session 14 — JSON-LD + sitemap + robots.txt | ⬜ À faire — **recommandé après blog** | à créer |
+| Session 15 — Hub zones + 1 page géo modèle | ⬜ À faire | à créer |
+| Session 16 — 9 autres pages géo | ⬜ À faire (besoin validation liste villes) | à créer |
+| Session 17 — Avis Google dynamiques | ⬜ À faire (besoin Place ID + clé API) | à créer |
+| Session 18 — Bandeau confiance RGE + décennale | ⬜ À faire — **débloqué** (logo QualiPV déjà dans `images/`) | à créer |
+| Session 19 — Hub blog + template | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
+| Session 20 — Article aides 2026 | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
+| Session 21 — Article batterie virtuelle JPME | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
+| Session 22 — Article 3e (au choix) | ⬜ À faire | à créer |
+
+**Synthèse** : 6 sessions déployées (1, 2, 3, 6, Blog hub, Blog article 1, Blog article 2) sur ~22 prévues. Prochaines recommandées : **Session 4 (légal)**, **Session 18 (bandeau RGE)**, **Session 14 (SEO technique)**.
+
+---
+
 ## SESSION 1 — Correctifs critiques HTML (1 h)
 
 **Chantier** : 1 — Bugs critiques
