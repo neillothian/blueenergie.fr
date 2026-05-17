@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Google Drive metadata
+.tmp.driveupload
+.tmp.drivedownload
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+Thumbs.db
+
+# Sauvegardes locales pré-session (filet de sécurité disque, pas pour l'historique git)
+*.backup-*
