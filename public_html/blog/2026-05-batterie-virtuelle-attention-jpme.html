@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batteries virtuelles : promesses séduisantes, vraies déconvenues | Blue Energie</title>
+    <meta name="description" content="Les offres de batterie virtuelle promettent de stocker votre surplus sans investir dans une vraie batterie. Mais le retrait d'autorisation de JPME en janvier 2026 montre les risques de ce modèle.">
+    <link rel="canonical" href="https://blueenergie.fr/blog/2026-05-batterie-virtuelle-attention-jpme.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Batteries virtuelles : promesses séduisantes, vraies déconvenues">
+    <meta property="og:description" content="Les offres de batterie virtuelle promettent de stocker votre surplus sans investir dans une vraie batterie. Le cas JPME (janvier 2026) montre les risques de ce modèle.">
+    <meta property="og:url" content="https://blueenergie.fr/blog/2026-05-batterie-virtuelle-attention-jpme.html">
+    <meta property="og:image" content="https://blueenergie.fr/images/blue-energie-photovoltaique.webp">
+    <meta property="og:site_name" content="Blue Energie">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="article:published_time" content="2026-05-17T08:00:00+02:00">
+    <meta property="article:modified_time" content="2026-05-17T08:00:00+02:00">
+    <meta property="article:author" content="Neil Lothian">
+    <meta property="article:section" content="Conseil &amp; vigilance">
+
+    <!-- JSON-LD Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Batteries virtuelles : promesses séduisantes, vraies déconvenues",
+      "description": "Les offres de batterie virtuelle promettent de stocker votre surplus sans investir dans une vraie batterie. Le retrait d'autorisation de JPME en janvier 2026 illustre les risques de ce modèle.",
+      "datePublished": "2026-05-17",
+      "dateModified": "2026-05-17",
+      "author": {
+        "@type": "Person",
+        "name": "Neil Lothian",
+        "url": "https://blueenergie.fr/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Blue Energie",
+        "url": "https://blueenergie.fr/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blueenergie.fr/blog/2026-05-batterie-virtuelle-attention-jpme.html"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Toutes les batteries virtuelles sont-elles à fuir ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Certains fournisseurs sérieux proposent des offres correctes. Mais le modèle économique reste structurellement fragile, et le cas JPME montre que même un acteur installé peut chuter brutalement."}},
+        {"@type": "Question", "name": "Quelle est la différence avec un contrat EDF OA classique ?", "acceptedAnswer": {"@type": "Answer", "text": "Avec EDF OA, vous vendez votre surplus à prix fixe (4 c€/kWh aujourd'hui, 1,1 c€/kWh après réforme), sans engagement de restitution. Avec une batterie virtuelle, vous stockez sans vendre, mais vous payez l'abonnement majoré."}},
+        {"@type": "Question", "name": "Et si je n'ai pas envie d'investir dans une vraie batterie ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous pouvez très bien faire du solaire pur autoconsommation + vente du surplus EDF OA. Avec une bonne adéquation entre production et consommation diurne, vous pouvez atteindre 60-70 % d'autoconsommation directe sans batterie."}},
+        {"@type": "Question", "name": "Combien coûte une vraie batterie en 2026 ?", "acceptedAnswer": {"@type": "Answer", "text": "Comptez 1 700 € pour 5 kWh installés (premier pack), puis environ 1 300 € par module supplémentaire de 5 kWh. À partir de 10 kWh, vous passez sous 300 €/kWh installé, ce qui est très compétitif sur le marché."}}
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #4fc7ef;
+            --primary-orange: #fb9641;
+            --white: #ffffff;
+            --gray-bg: #f9f9f9;
+            --text-dark: #2a2a2a;
+            --text-soft: #555;
+            --border-soft: #e6e6e6;
+        }
+
+        body {
+            background: var(--gray-bg);
+            color: var(--text-dark);
+            line-height: 1.65;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo a {
+            display: block;
+            height: 100%;
+        }
+
+        .navbar .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+        }
+
+        .navbar li {
+            margin: 0 1.2rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary-orange);
+        }
+
+        .mobile-menu-button {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .breadcrumb {
+            background: var(--white);
+            padding: 0.75rem 2rem;
+            font-size: 0.9rem;
+            color: var(--text-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-orange);
+        }
+
+        article.post {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3rem;
+            width: 100%;
+        }
+
+        article.post h1 {
+            color: var(--primary-blue);
+            font-size: 2.1rem;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        article.post .post-meta {
+            color: var(--text-soft);
+            font-size: 0.92rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        article.post p {
+            margin-bottom: 1.1rem;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        article.post h2 {
+            color: var(--primary-blue);
+            font-size: 1.55rem;
+            margin: 2.25rem 0 1rem;
+            padding-top: 0.5rem;
+            line-height: 1.3;
+        }
+
+        article.post h3 {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        article.post ul {
+            margin: 0 0 1.25rem 1.5rem;
+        }
+
+        article.post ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        article.post ol {
+            margin: 0 0 1.25rem 1.5rem;
+        }
+
+        article.post ol li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        article.post strong {
+            color: var(--text-dark);
+        }
+
+        .warning-block {
+            background: #fff5f0;
+            border-left: 4px solid var(--primary-orange);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .warning-block strong {
+            color: #c0392b;
+        }
+
+        details.faq-item {
+            background: var(--white);
+            border: 1px solid var(--border-soft);
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        details.faq-item[open] {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        details.faq-item summary {
+            cursor: pointer;
+            padding: 1rem 1.25rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            list-style: none;
+            position: relative;
+            padding-right: 2.5rem;
+        }
+
+        details.faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-orange);
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        details.faq-item[open] summary::after {
+            content: "−";
+        }
+
+        details.faq-item .answer {
+            padding: 0 1.25rem 1.1rem;
+            color: #444;
+        }
+
+        .sources {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1rem 0 2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .sources ul {
+            margin: 0 0 0 1.25rem;
+        }
+
+        .sources li {
+            margin-bottom: 0.55rem;
+            line-height: 1.5;
+        }
+
+        .sources a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .sources a:hover {
+            text-decoration: underline;
+            color: var(--primary-orange);
+        }
+
+        .cta-end {
+            background: linear-gradient(135deg, var(--primary-orange), #e67e22);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-radius: 12px;
+            margin: 2.5rem 0;
+        }
+
+        .cta-end h2 {
+            color: var(--white) !important;
+            margin: 0 0 0.5rem !important;
+            padding: 0 !important;
+            font-size: 1.5rem;
+        }
+
+        .cta-end p {
+            margin-bottom: 1.5rem !important;
+            opacity: 0.95;
+            font-size: 1rem !important;
+            color: var(--white) !important;
+        }
+
+        .cta-button {
+            background: var(--white);
+            color: var(--primary-orange);
+            padding: 0.95rem 1.8rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        }
+
+        .related {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .related h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .related ul {
+            margin: 0 0 0 1.25rem;
+        }
+
+        .related li {
+            margin-bottom: 0.5rem;
+        }
+
+        .related a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .related a:hover {
+            color: var(--primary-orange);
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+        }
+
+        footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--primary-orange);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .mobile-menu-button {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                z-index: 1001;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 4rem 2rem;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+            }
+
+            .navbar ul.active {
+                right: 0;
+            }
+
+            .navbar li {
+                margin: 1rem 0;
+            }
+
+            .navbar .logo {
+                margin-right: auto;
+            }
+
+            article.post {
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            article.post h1 {
+                font-size: 1.6rem;
+            }
+
+            article.post h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEG722VJTV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JEG722VJTV');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/" aria-label="Retour à l'accueil Blue Energie">
+                <img src="../images/Logo-blue-energie.png" alt="Blue Energie logo" height="50">
+            </a>
+        </div>
+        <button class="mobile-menu-button" aria-label="Menu">☰</button>
+        <ul>
+            <li><a href="/#processus">Processus</a></li>
+            <li><a href="/#etude">Etude</a></li>
+            <li><a href="/#materiel">Matériel</a></li>
+            <li><a href="/#realisations">Réalisations</a></li>
+            <li><a href="/blog/" class="active">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a> &gt; <a href="/blog/">Blog</a> &gt; Batteries virtuelles : attention aux promesses
+    </nav>
+
+    <article class="post">
+        <h1>Batteries virtuelles : promesses séduisantes, vraies déconvenues</h1>
+
+        <p class="post-meta">Publié le 17 mai 2026 · 6 min de lecture · Catégorie : Conseil &amp; vigilance · Par Neil Lothian</p>
+
+        <p>La « batterie virtuelle » est un concept commercial séduisant : au lieu d'investir 3 000 à 6 000 € dans une vraie batterie physique pour stocker votre surplus solaire, vous le « stockez chez votre fournisseur » qui s'engage à vous restituer la même quantité d'électricité quand vous en avez besoin. Sur le papier, c'est miraculeux : zéro investissement matériel, autoconsommation maximisée, indépendance énergétique.</p>
+
+        <p>Dans les faits, le modèle est beaucoup plus fragile que ce que la communication commerciale laisse penser. Le retrait d'autorisation de la société JPME en janvier 2026, dénoncé pendant 18 mois par le médiateur national de l'énergie, vient le rappeler de manière éclatante.</p>
+
+        <h2>Qu'est-ce qu'une batterie virtuelle, vraiment ?</h2>
+
+        <p>Une batterie virtuelle n'est pas une batterie. C'est un <strong>service commercial proposé par un fournisseur d'électricité</strong>. Le mécanisme est le suivant :</p>
+
+        <ol>
+            <li>Vos panneaux produisent plus d'électricité que vous n'en consommez à un moment donné</li>
+            <li>Ce surplus est injecté sur le réseau électrique national</li>
+            <li>Votre fournisseur de batterie virtuelle « crédite » votre compte d'un nombre de kWh</li>
+            <li>Plus tard, quand votre consommation dépasse votre production, vous pouvez « consommer » ces kWh stockés — sans payer la part énergie de votre facture pour cette quantité</li>
+        </ol>
+
+        <p>Côté technique, <strong>rien n'est physiquement stocké</strong>. Votre surplus est simplement vendu au prix du marché par le fournisseur, et il s'engage à vous restituer la quantité équivalente plus tard.</p>
+
+        <h2>Pourquoi c'est risqué : le cas JPME</h2>
+
+        <p>JPME (filiale d'Actelios Solutions) était l'un des principaux acteurs de la batterie virtuelle en France, avec environ <strong>4 760 producteurs solaires sous contrat</strong>.</p>
+
+        <div class="warning-block">
+            <p>Le 15 janvier 2026, un arrêté du ministre de l'Économie publié au Journal officiel a <strong>retiré à JPME l'autorisation de fournir de l'électricité</strong>, avec effet au 22 janvier 2026.</p>
+        </div>
+
+        <p>Les griefs accumulés contre l'entreprise depuis 2024 :</p>
+
+        <ul>
+            <li><strong>Pratiques commerciales trompeuses</strong> (l'État utilise ce terme dans son enquête)</li>
+            <li><strong>Affichage de prix mensonger</strong></li>
+            <li><strong>Retards de paiement des producteurs solaires</strong></li>
+        </ul>
+
+        <p>Le médiateur national de l'énergie avait sonné l'alarme dès septembre 2024 et formellement demandé le retrait d'autorisation en novembre 2024. Le recours juridique déposé par JPME a été rejeté.</p>
+
+        <p>Conséquence immédiate pour les clients : leur contrat de fourniture bascule vers EDF (fournisseur de secours sur 95 % du territoire). Mais pour le rachat de leur production, environ 4 760 producteurs doivent désormais <strong>trouver eux-mêmes un nouvel acheteur</strong> sur le marché. Beaucoup ont en outre des factures impayées par JPME qui s'accumulent depuis des mois.</p>
+
+        <h2>Les vraies limites des batteries virtuelles (au-delà du cas JPME)</h2>
+
+        <p>Même avec un fournisseur sérieux, le modèle pose plusieurs questions structurelles :</p>
+
+        <h3>1. Vous dépendez de la solvabilité d'une entreprise privée</h3>
+        <p>Une vraie batterie chez vous est votre propriété, garantie 10 ans par le fabricant. Une batterie virtuelle est un crédit en kWh stocké chez un fournisseur qui peut faire faillite, perdre son autorisation, ou changer ses CGV.</p>
+
+        <h3>2. La part énergie représente seulement 35 à 40 % de votre facture</h3>
+        <p>Quand vous « consommez » vos kWh virtuels, vous ne payez que la part énergie. Le reste de la facture (acheminement TURPE, taxes CSPE, contribution tarifaire d'acheminement, TVA) continue de s'appliquer normalement. L'économie réelle est donc bien inférieure à ce que laisse penser une équivalence « 1 kWh produit = 1 kWh gratuit consommé ».</p>
+
+        <h3>3. Les contrats imposent souvent des abonnements majorés</h3>
+        <p>Pour bénéficier de la batterie virtuelle, vous devez généralement souscrire l'offre d'électricité du même fournisseur, avec un abonnement plus cher que le marché. Sur l'année, ce surcoût peut grignoter une partie significative des économies promises.</p>
+
+        <h3>4. Des conditions de restitution restrictives</h3>
+        <p>Plafonds de stockage, durée de validité des kWh stockés, frais cachés sur dépassement, restrictions saisonnières — les conditions générales sont souvent défavorables et opaques.</p>
+
+        <h2>Vraie batterie ou batterie virtuelle : comment trancher ?</h2>
+
+        <p>Une vraie batterie physique (type Solplanet G3, BYD, Pylontech…) représente un investissement initial de 2 500 à 4 000 € pour 10 kWh installés. Garantie 10 ans, propriété pleine, fonctionne même en cas de coupure réseau (mode backup).</p>
+
+        <p>Une batterie virtuelle représente 0 € d'investissement mais des engagements contractuels sur plusieurs années avec un acteur privé dont la viabilité économique peut évoluer.</p>
+
+        <p>Notre conviction chez Blue Energie : <strong>la vraie batterie est plus prudente sur le long terme</strong> — surtout depuis que les prix au kWh installé sont devenus très compétitifs (moins de 300 €/kWh à partir de 10 kWh chez Solplanet par exemple). Vous restez propriétaire de votre matériel, indépendant des aléas commerciaux, et vous bénéficiez de la fonction backup en cas de coupure réseau.</p>
+
+        <h2>Que faire si vous êtes déjà client d'une batterie virtuelle ?</h2>
+
+        <p>Si vous êtes chez JPME : votre contrat fourniture a basculé vers EDF automatiquement. Pour le rachat de votre production, contactez EDF OA (Obligation d'Achat) ou un autre acheteur (Engie, TotalEnergies, etc.). Le médiateur national de l'énergie a mis en ligne une page d'information dédiée.</p>
+
+        <p>Si vous êtes chez un autre fournisseur de batterie virtuelle : lisez attentivement vos CGV, suivez les actualités du fournisseur (santé financière, démêlés réglementaires), et envisagez une bascule vers une vraie batterie si les conditions deviennent défavorables.</p>
+
+        <h2>Foire aux questions</h2>
+
+        <details class="faq-item">
+            <summary>Toutes les batteries virtuelles sont-elles à fuir ?</summary>
+            <div class="answer">Non. Certains fournisseurs sérieux proposent des offres correctes. Mais le modèle économique reste structurellement fragile, et le cas JPME montre que même un acteur installé peut chuter brutalement.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Quelle est la différence avec un contrat EDF OA classique ?</summary>
+            <div class="answer">Avec EDF OA, vous vendez votre surplus à prix fixe (4 c€/kWh aujourd'hui, 1,1 c€/kWh après réforme), sans engagement de restitution. Avec une batterie virtuelle, vous « stockez » sans vendre, mais vous payez l'abonnement majoré. Voir notre <a href="/blog/2026-05-aides-solaires-avant-1er-juillet.html">article sur la réforme des aides 2026</a>.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Et si je n'ai pas envie d'investir dans une vraie batterie ?</summary>
+            <div class="answer">Vous pouvez très bien faire du solaire pur autoconsommation + vente du surplus EDF OA. Avec une bonne adéquation entre production et consommation diurne (chauffe-eau, lave-linge, voiture électrique pendant la journée), vous pouvez atteindre 60-70 % d'autoconsommation directe sans batterie.</div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Combien coûte une vraie batterie en 2026 ?</summary>
+            <div class="answer">Comptez 1 700 € pour 5 kWh installés (premier pack), puis ~1 300 € par module supplémentaire de 5 kWh. À partir de 10 kWh, vous passez sous 300 €/kWh installé, ce qui est très compétitif sur le marché. Voir notre <a href="/#materiel">catalogue matériel</a>.</div>
+        </details>
+
+        <h2>Pour aller plus loin</h2>
+
+        <div class="sources">
+            <ul>
+                <li><a href="https://www.energie-mediateur.fr/jpme-retrait-dautorisation-de-fourniture/" target="_blank" rel="noopener noreferrer nofollow">Médiateur national de l'énergie — Retrait d'autorisation JPME</a></li>
+                <li><a href="https://www.energie-info.fr/je-suis-client-de-jpme-que-faire/" target="_blank" rel="noopener noreferrer nofollow">Énergie-Info — Je suis client JPME, que faire ?</a></li>
+                <li><a href="https://www.quechoisir.org/actualite-rachat-d-electricite-solaire-le-ciel-s-assombrit-pour-jpme-et-ses-centaines-de-factures-encore-impayees-n167720/" target="_blank" rel="noopener noreferrer nofollow">UFC-Que Choisir — Enquête sur JPME</a></li>
+                <li><a href="https://tecsol-quotidien.fr/jpme-qui-sest-vu-retirer-lautorisation-ministerielle-du-fournisseur-delectricite-depose-un-refere/" target="_blank" rel="noopener noreferrer nofollow">Tecsol Quotidien — JPME et l'avenir de la batterie virtuelle</a></li>
+            </ul>
+        </div>
+
+        <section class="cta-end" aria-labelledby="cta-end-title">
+            <h2 id="cta-end-title">Vous hésitez entre vraie batterie et batterie virtuelle ?</h2>
+            <p>On vous accompagne dans le choix le plus prudent et le plus rentable pour votre projet.</p>
+            <a href="/#study-request" class="cta-button">Demander une étude gratuite</a>
+        </section>
+
+        <aside class="related">
+            <h3>Articles liés</h3>
+            <ul>
+                <li><a href="/blog/2026-05-aides-solaires-avant-1er-juillet.html">Aides solaires : souscrivez avant le 1er juillet 2026</a></li>
+                <li><a href="/#materiel">Notre catalogue matériel (batterie Solplanet &lt; 300 €/kWh)</a></li>
+            </ul>
+        </aside>
+    </article>
+
+    <footer>
+        <p>Blue Energie - Solutions Photovoltaïques</p>
+        <p>Téléphone : <a href="tel:0761504385">07 61 50 43 85</a></p>
+        <p>Email : <a href="mailto:contact@blueenergie.fr">contact@blueenergie.fr</a></p>
+        <p><a href="/">Retour à l'accueil</a> · <a href="/blog/">Tous les articles</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.mobile-menu-button');
+            const navMenu = document.querySelector('.navbar ul');
+            const navLinks = document.querySelectorAll('.navbar ul a');
+
+            menuButton.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                menuButton.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

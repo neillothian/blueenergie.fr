@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Blue Energie | Actualités photovoltaïque Haute-Savoie</title>
+    <meta name="description" content="Conseils, aides, actualités du solaire : tout savoir sur le photovoltaïque résidentiel en Haute-Savoie. Réforme des aides 2026, batteries virtuelles, rentabilité, retours d'expérience.">
+    <link rel="canonical" href="https://blueenergie.fr/blog/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog Blue Energie — Actualités photovoltaïque Haute-Savoie">
+    <meta property="og:description" content="Conseils, aides, actualités du solaire : tout savoir sur le photovoltaïque résidentiel en Haute-Savoie.">
+    <meta property="og:url" content="https://blueenergie.fr/blog/">
+    <meta property="og:site_name" content="Blue Energie">
+    <meta property="og:locale" content="fr_FR">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #4fc7ef;
+            --primary-orange: #fb9641;
+            --white: #ffffff;
+            --gray-bg: #f9f9f9;
+            --text-dark: #333;
+            --text-soft: #555;
+        }
+
+        body {
+            background: var(--gray-bg);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo a {
+            display: block;
+            height: 100%;
+        }
+
+        .navbar .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+        }
+
+        .navbar li {
+            margin: 0 1.2rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary-orange);
+        }
+
+        .mobile-menu-button {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .blog-header {
+            background: linear-gradient(135deg, rgba(79,199,239,0.95), rgba(79,199,239,0.75));
+            color: var(--white);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .blog-header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .blog-header p {
+            font-size: 1.15rem;
+            opacity: 0.95;
+        }
+
+        main.blog-main {
+            flex: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            width: 100%;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .article-card .visual {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary-blue), #2ea7d0);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+
+        .article-card .visual.alert {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .article-card .badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--primary-orange);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .article-card .badge.danger {
+            background: #c0392b;
+        }
+
+        .article-card .body {
+            padding: 1.5rem 1.5rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .article-card .date {
+            color: var(--text-soft);
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-card h2 {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            line-height: 1.35;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-card p.excerpt {
+            color: var(--text-dark);
+            line-height: 1.55;
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        .article-card .read-more {
+            color: var(--primary-orange);
+            font-weight: bold;
+            font-size: 0.95rem;
+            align-self: flex-start;
+        }
+
+        .article-card .read-more::after {
+            content: " →";
+        }
+
+        .cta-block {
+            background: linear-gradient(135deg, var(--primary-orange), #e67e22);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 3.5rem;
+        }
+
+        .cta-block h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-block p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: var(--white);
+            color: var(--primary-orange);
+            padding: 0.95rem 1.8rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+        }
+
+        footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--primary-orange);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .mobile-menu-button {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                z-index: 1001;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 4rem 2rem;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+            }
+
+            .navbar ul.active {
+                right: 0;
+            }
+
+            .navbar li {
+                margin: 1rem 0;
+            }
+
+            .navbar .logo {
+                margin-right: auto;
+            }
+
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .blog-header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEG722VJTV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JEG722VJTV');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/" aria-label="Retour à l'accueil Blue Energie">
+                <img src="../images/Logo-blue-energie.png" alt="Blue Energie logo" height="50">
+            </a>
+        </div>
+        <button class="mobile-menu-button" aria-label="Menu">☰</button>
+        <ul>
+            <li><a href="/#processus">Processus</a></li>
+            <li><a href="/#etude">Etude</a></li>
+            <li><a href="/#materiel">Matériel</a></li>
+            <li><a href="/#realisations">Réalisations</a></li>
+            <li><a href="/blog/" class="active">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="blog-header">
+        <h1>Blog Blue Energie</h1>
+        <p>Conseils &amp; actualités du photovoltaïque en Haute-Savoie</p>
+    </header>
+
+    <main class="blog-main">
+        <div class="articles-grid">
+            <a href="/blog/2026-05-aides-solaires-avant-1er-juillet.html" class="article-card">
+                <div class="visual alert" aria-hidden="true">
+                    <span class="badge">Urgent</span>
+                    <span>⚡</span>
+                </div>
+                <div class="body">
+                    <div class="date">Mai 2026 · Aides &amp; réglementation</div>
+                    <h2>Aides solaires : la fin d'une époque — souscrivez avant le 1er juillet 2026</h2>
+                    <p class="excerpt">Le gouvernement supprime la prime à l'autoconsommation et divise par 4 le tarif de rachat du surplus. Comment sécuriser vos aides actuelles avant l'échéance.</p>
+                    <span class="read-more">Lire l'article</span>
+                </div>
+            </a>
+
+            <a href="/blog/2026-05-batterie-virtuelle-attention-jpme.html" class="article-card">
+                <div class="visual" aria-hidden="true">
+                    <span class="badge danger">Alerte</span>
+                    <span>🔋</span>
+                </div>
+                <div class="body">
+                    <div class="date">Mai 2026 · Conseil &amp; vigilance</div>
+                    <h2>Batteries virtuelles : promesses séduisantes, vraies déconvenues</h2>
+                    <p class="excerpt">Le retrait d'autorisation de JPME en janvier 2026 illustre les risques d'un modèle commercial qui paraît trop beau pour être vrai. Décryptage et alternatives.</p>
+                    <span class="read-more">Lire l'article</span>
+                </div>
+            </a>
+        </div>
+
+        <section class="cta-block" aria-labelledby="cta-title">
+            <h2 id="cta-title">Vous avez un projet solaire ?</h2>
+            <p>Étude technique gratuite, sans engagement, réponse sous 48-72 h.</p>
+            <a href="/#study-request" class="cta-button">Demander mon étude gratuite</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Blue Energie - Solutions Photovoltaïques</p>
+        <p>Téléphone : <a href="tel:0761504385">07 61 50 43 85</a></p>
+        <p>Email : <a href="mailto:contact@blueenergie.fr">contact@blueenergie.fr</a></p>
+        <p><a href="/">Retour à l'accueil</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.mobile-menu-button');
+            const navMenu = document.querySelector('.navbar ul');
+            const navLinks = document.querySelectorAll('.navbar ul a');
+
+            menuButton.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                menuButton.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
