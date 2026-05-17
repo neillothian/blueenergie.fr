@@ -26,7 +26,7 @@
 | Session 15 — Hub zones + 1 page géo modèle | ⬜ À faire | à créer |
 | Session 16 — 9 autres pages géo | ⬜ À faire (besoin validation liste villes) | à créer |
 | Session 17 — Avis Google dynamiques | ⬜ À faire (besoin Place ID + clé API) | à créer |
-| Session 18 — Bandeau confiance RGE + décennale | ⚠️ Code déployé mais rendu KO — à reprendre (visuel/UX à diagnostiquer) | `PROMPT-SESSION-18.md` |
+| Session 18 — Bandeau confiance RGE + décennale | ✅ **DÉPLOYÉ** (correctif appliqué) | `PROMPT-SESSION-18.md` |
 | Session 19 — Hub blog + template | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 20 — Article aides 2026 | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 21 — Article batterie virtuelle JPME | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
