@@ -30,6 +30,7 @@
     <meta name="theme-color" content="#4fc7ef">
 
     <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="/assets/js/partials-loader.js" defer></script>
 <link rel="stylesheet" href="/assets/css/bandeau-confiance.css">
 <!-- Bandeau consentement cookies (tarteaucitron) -->
 <script src="/assets/tarteaucitron/tarteaucitron.js"></script>
@@ -109,20 +110,7 @@
 </script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="images/Logo-blue-energie.png" alt="Blue Energie logo - stylized solar panel in light blue with company name in blue and orange" height="50">
-        </div>
-        <button class="mobile-menu-button" aria-label="Menu">☰</button>
-        <ul>
-            <li><a href="#processus">Processus d'un projet</a></li>
-            <li><a href="#etude">Etude et dimensionnement</a></li>
-            <li><a href="#materiel">Choix du matériel</a></li>
-            <li><a href="#realisations">Réalisations</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div id="site-header"></div>
 
     
 
@@ -585,20 +573,7 @@
         </div>
     </section>
     </div>
-    <footer>
-        <p>Blue Energie - Solutions Photovoltaïques</p>
-        <p>Téléphone: 07 61 50 43 85</p>
-        <p>Email: neil.lothian@blueenergie.fr</p>
-        <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(0,0,0,0.1); text-align:center; font-size:0.85rem;">
-            <a href="/mentions-legales.html" style="color:#4fc7ef; text-decoration:none;">Mentions légales</a>
-            &nbsp;·&nbsp;
-            <a href="/cgv.html" style="color:#4fc7ef; text-decoration:none;">CGV</a>
-            &nbsp;·&nbsp;
-            <a href="/politique-confidentialite.html" style="color:#4fc7ef; text-decoration:none;">Politique de confidentialité</a>
-            &nbsp;·&nbsp;
-            <a href="#tarteaucitron" style="color:#4fc7ef; text-decoration:none;" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gérer mes cookies</a>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
 
     <script src="/assets/js/main.js" defer></script>
 </body>

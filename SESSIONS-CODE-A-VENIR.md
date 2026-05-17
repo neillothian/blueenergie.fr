@@ -19,7 +19,7 @@
 | Session 8 — Extraction CSS/JS séparés | ✅ **DÉPLOYÉ** (partiel : index + merci, blog/légal hors scope) | `PROMPT-SESSION-MARATHON.md` |
 | Session 9 — Optimisation images + favicon + meta | ✅ **DÉPLOYÉ** (favicon + Open Graph + Twitter Card ; compression images = mini-session manuelle future) | `PROMPT-SESSION-9.md` |
 | Session 10 — Refonte formulaire + hCaptcha | ⬜ À faire (besoin sitekey hCaptcha) | à créer |
-| Session 11 — Multi-pages partials | ⬜ À faire | à créer |
+| Session 11 — Multi-pages partials | ✅ **DÉPLOYÉ** (index uniquement, autres pages refactor ultérieur) | `PROMPT-SESSION-MARATHON.md` |
 | Session 12 — Pages internes principales | ⬜ À faire | à créer |
 | Session 13 — Page aides 2026 | ⬜ À faire | à créer |
 | Session 14 — JSON-LD + sitemap + robots.txt | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-14.md` |
