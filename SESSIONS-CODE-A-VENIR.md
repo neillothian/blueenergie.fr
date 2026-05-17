@@ -22,7 +22,7 @@
 | Session 11 — Multi-pages partials | ⬜ À faire | à créer |
 | Session 12 — Pages internes principales | ⬜ À faire | à créer |
 | Session 13 — Page aides 2026 | ⬜ À faire | à créer |
-| Session 14 — JSON-LD + sitemap + robots.txt | ⏳ Prompt prêt, à lancer | `PROMPT-SESSION-14.md` |
+| Session 14 — JSON-LD + sitemap + robots.txt | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-14.md` |
 | Session 15 — Hub zones + 1 page géo modèle | ⬜ À faire | à créer |
 | Session 16 — 9 autres pages géo | ⬜ À faire (besoin validation liste villes) | à créer |
 | Session 17 — Avis Google dynamiques | ⬜ À faire (besoin Place ID + clé API) | à créer |

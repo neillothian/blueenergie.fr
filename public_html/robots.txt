@@ -1,0 +1,9 @@
+# robots.txt — blueenergie.fr
+# Politique : autoriser tous les crawlers à indexer tout le contenu public.
+
+User-agent: *
+Allow: /
+Disallow: /_dropzone/
+Disallow: /api/
+
+Sitemap: https://blueenergie.fr/sitemap.xml
