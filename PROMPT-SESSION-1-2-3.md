@@ -9,7 +9,7 @@
 ## Mode d'emploi (côté Neil)
 
 1. Ouvre un terminal
-2. `cd "/Users/neillothian/Library/CloudStorage/GoogleDrive-neil.lothian@infinityservices.club/Mon Drive/0.0 REFERENCE/1.1.2 Pro_BLUE ENERGIE/blueenergie.fr"`
+2. `cd "/Users/neillothian/Documents/Claude/Projects/blueenergie.fr"`
 3. Lance Claude Code : `claude`
 4. Quand le chat s'ouvre, copie-colle tout ce qui est entre `=== DÉBUT PROMPT ===` et `=== FIN PROMPT ===`
 5. Laisse tourner. Le dev rend son rapport à la fin.

@@ -9,7 +9,7 @@
 ## Mode d'emploi (côté Neil)
 
 1. Ouvre un terminal
-2. `cd "/Users/neillothian/Library/CloudStorage/GoogleDrive-neil.lothian@infinityservices.club/Mon Drive/0.0 REFERENCE/1.1.2 Pro_BLUE ENERGIE/blueenergie.fr"`
+2. `cd "/Users/neillothian/Documents/Claude/Projects/blueenergie.fr"`
 3. Lance Claude Code : `claude`
 4. Copie-colle tout ce qui est entre `=== DÉBUT PROMPT ===` et `=== FIN PROMPT ===`
 5. Laisse tourner. Tu reçois le rapport à la fin.
@@ -43,7 +43,7 @@ Durée estimée : 1,5 heure. Autonomie totale. Aucune question au user.
 Lis dans cet ordre :
 1. `public_html/index.html` (section `#materiel` lignes ~775-813 et section `#realisations` lignes ~815-874)
 2. `WIREFRAMES-PAGES.md` — uniquement section « 3. materiel-panneaux-solaires.html » pour comprendre l'angle voulu
-3. `1 Clients /reghem 74/fiche-client.md` (si accessible) — pour les références matériel exactes
+3. (Optionnel) `~/Documents/Claude/Projects/1 Clients /reghem 74/fiche-client.md` si tu as accès au dossier client — sinon, toutes les références matériel exactes sont déjà fournies dans ce prompt
 
 Ne lis pas les autres .md.
 

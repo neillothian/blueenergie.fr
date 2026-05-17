@@ -10,7 +10,7 @@
 ## Mode d'emploi (côté Neil)
 
 1. Ouvre un terminal
-2. `cd "/Users/neillothian/Library/CloudStorage/GoogleDrive-neil.lothian@infinityservices.club/Mon Drive/0.0 REFERENCE/1.1.2 Pro_BLUE ENERGIE/blueenergie.fr"`
+2. `cd "/Users/neillothian/Documents/Claude/Projects/blueenergie.fr"`
 3. Lance Claude Code : `claude`
 4. Copie-colle tout ce qui est entre `=== DÉBUT PROMPT ===` et `=== FIN PROMPT ===`
 5. Laisse tourner ~3 h. Rapport final à la fin.
@@ -37,9 +37,14 @@ Durée : 3 heures. Aucune question au user. Toutes les données factuelles sont 
 
 ### Étape 0 — Initialisation (5 min)
 
-1. TodoWrite avec 8 tâches : structure dossier blog, hub blog, article 1, article 2, navbar update, JSON-LD, validation, sauvegarde
-2. Backup : `cp public_html/index.html public_html/index.html.backup-pre-blog`
-3. Git snapshot si init : `git add -A && git commit -m "snapshot avant création blog" || true`
+1. TodoWrite avec 9 tâches : git pull, structure dossier blog, hub blog, article 1, article 2, navbar update, JSON-LD, validation, git push
+2. **Synchroniser avec le remote GitHub** :
+   ```bash
+   git pull origin main --rebase
+   ```
+   Si le pull échoue (conflit, auth), diagnostique et résous. Ne continue PAS tant que le working tree n'est pas à jour avec le remote.
+3. Backup local de sécurité (en plus de git) : `cp public_html/index.html public_html/index.html.backup-pre-blog`
+4. Vérifier que git est propre avant de commencer : `git status` doit retourner « nothing to commit, working tree clean ».
 
 ### Étape 1 — Lecture contexte (10 min)
 
@@ -429,10 +434,16 @@ Faire pareil dans `public_html/merci.html` (navbar simplifiée — ajouter aussi
 
 5. **Validation Schema.org** : copier l'URL prod future dans https://validator.schema.org (à faire après upload par Neil)
 
-6. **Si git init**, commit :
+6. **Commit + push GitHub** (git est déjà init avec remote `origin` vers `github.com/neillothian/blueenergie.fr`) :
    ```bash
-   git add -A && git commit -m "Session blog: hub + 2 articles SEO (aides 2026 + batteries virtuelles JPME)"
+   git add -A
+   git commit -m "Session blog: hub + 2 articles SEO (aides 2026 + batteries virtuelles JPME)"
+   git push origin main
    ```
+   Si le `git push` échoue pour cause d'auth :
+   - Vérifie `git remote -v` (doit pointer vers https://github.com/neillothian/blueenergie.fr.git)
+   - Tente une seule fois — si l'auth interactive est requise, n'essaie pas d'inventer un token, signale juste dans le rapport « push manuel requis par Neil »
+   - Le commit local reste valide dans les deux cas (Neil pourra push manuellement depuis son terminal après coup)
 
 ## Décisions déjà prises (ne demande RIEN)
 
@@ -449,6 +460,7 @@ Faire pareil dans `public_html/merci.html` (navbar simplifiée — ajouter aussi
 | Categories | Pas de système de catégories pour l'instant (juste 2 articles, on n'a pas besoin) |
 | Commentaires | Pas de commentaires (pas pour démarrer) |
 | Newsletter | Pas pour l'instant (futur chantier) |
+| Git workflow | Pull au début, commit + push à la fin sur `origin/main` (GitHub : neillothian/blueenergie.fr). Si auth interactive requise, commit local valide + signaler dans rapport |
 
 ## Interdictions strictes
 
@@ -500,7 +512,9 @@ Faire pareil dans `public_html/merci.html` (navbar simplifiée — ajouter aussi
 - Validation W3C hub : X erreurs / X warnings
 - Validation W3C article 1 : X erreurs / X warnings
 - Validation W3C article 2 : X erreurs / X warnings
-- Git commit : oui/non
+- Git pull initial : OK / KO
+- Git commit local : OK
+- Git push vers GitHub origin/main : OK / manuel requis (préciser pourquoi)
 
 ## À faire côté toi (Neil)
 1. Téléverser sur Hostinger via hPanel ou FTP :
