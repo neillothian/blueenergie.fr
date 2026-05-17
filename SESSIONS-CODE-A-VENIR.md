@@ -16,7 +16,7 @@
 | Session 5 — Bandeau cookies tarteaucitron | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-5.md` |
 | Session 6 — Mise à jour catalogue matériel | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-6.md` |
 | Session 7 — Refonte galerie réalisations | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-MARATHON.md` |
-| Session 8 — Extraction CSS/JS séparés | ⬜ À faire | à créer |
+| Session 8 — Extraction CSS/JS séparés | ✅ **DÉPLOYÉ** (partiel : index + merci, blog/légal hors scope) | `PROMPT-SESSION-MARATHON.md` |
 | Session 9 — Optimisation images + favicon + meta | ✅ **DÉPLOYÉ** (favicon + Open Graph + Twitter Card ; compression images = mini-session manuelle future) | `PROMPT-SESSION-9.md` |
 | Session 10 — Refonte formulaire + hCaptcha | ⬜ À faire (besoin sitekey hCaptcha) | à créer |
 | Session 11 — Multi-pages partials | ⬜ À faire | à créer |
