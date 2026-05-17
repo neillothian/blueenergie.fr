@@ -31,11 +31,12 @@
 - Session 6 (catalogue matériel JA Solar / Solplanet / K2 / Tigo + badge prix batterie « < 300 €/kWh »)
 - Session Blog (hub `/blog/` + 2 articles : aides 2026, batteries virtuelles JPME)
 - Session 4 (mentions légales + CGV + politique de confidentialité + liens footer sur 5 pages) — vérifié live 2026-05-17
+- Session 5 (bandeau cookies tarteaucitron v1.18.x + GA4 conditionnel + lien « Gérer mes cookies » footer) — vérifié live 2026-05-17 (highPrivacy + DenyAllCta actifs)
 
 ⬜ **À faire en priorité** :
-- Session 5 (bandeau cookies tarteaucitron) — débloquée, recommandée après Session 4
 - Session 18 (bandeau confiance RGE + décennale) — débloquée
 - Session 14 (JSON-LD Organization + sitemap.xml + robots.txt) — recommandé après blog
+- Session 7 (finition galerie réalisations : `loading="lazy"`, retrait final Mylight)
 
 Détail complet : `SESSIONS-CODE-A-VENIR.md` (bloc « État d'avancement » en haut du fichier).
 
