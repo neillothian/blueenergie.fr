@@ -13,7 +13,7 @@
 | Session 2 — Page /merci.html + GA4 | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-1-2-3.md` |
 | Session 3 — Remplacement Google Maps | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-1-2-3.md` |
 | Session 4 — Mentions légales / CGV / RGPD | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-4.md` |
-| Session 5 — Bandeau cookies tarteaucitron | ⬜ À faire — autonome | à créer |
+| Session 5 — Bandeau cookies tarteaucitron | ⏳ Prompt prêt, à lancer | `PROMPT-SESSION-5.md` |
 | Session 6 — Mise à jour catalogue matériel | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-6.md` |
 | Session 7 — Refonte galerie réalisations | ⬜ Partiellement traité dans Session 6 (textes neutralisés). Reste : `loading="lazy"` partout, logos Mylight retirés des images si besoin | à créer |
 | Session 8 — Extraction CSS/JS séparés | ⬜ À faire | à créer |
