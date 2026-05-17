@@ -1,3 +1,56 @@
+# 🎓 Fiche de révision — Session Blog : hub + 2 articles SEO fondateurs
+
+> À lire AVANT de lancer le prompt dans Claude Code. Objectif : comprendre ce que la session va faire et pourquoi, pas juste exécuter aveuglément.
+
+Le site n'a aujourd'hui aucun contenu éditorial pour le SEO ni pour rassurer un prospect qui se renseigne. Cette session crée la fondation du blog (un hub + 2 articles) avec deux objectifs : faire monter le site dans Google sur les bonnes requêtes (« aides solaires 2026 », « batterie virtuelle JPME »), et capter des leads via un bouton « étude gratuite » placé à la fin de chaque article. Le contenu rédactionnel des 2 articles est fourni mot pour mot — le job du dev, c'est l'habillage HTML, pas l'écriture.
+
+## Ce que tu vas voir passer dans le prompt
+
+- **SEO** (Search Engine Optimization) : tout ce qu'on fait pour qu'une page remonte dans les résultats Google. Ici : titres avec mots-clés, balisage structuré, maillage interne entre articles, sources externes de qualité.
+- **JSON-LD** (JSON for Linked Data) : bloc `<script type="application/ld+json">` placé dans le `<head>` qui dit à Google « voici la structure de mon contenu » sous forme de données. Permet d'apparaître avec des FAQ dépliables dans les résultats Google.
+- **Schema.org Article + FAQPage** : les deux « types » de JSON-LD utilisés ici. `Article` décrit l'article (auteur, date, titre) ; `FAQPage` décrit les questions/réponses pour qu'elles s'affichent directement dans Google.
+- **Open Graph** : balises `<meta property="og:...">` dans le `<head>` qui contrôlent l'aspect de l'aperçu quand quelqu'un partage l'URL sur LinkedIn, Facebook, etc.
+- **Maillage interne** : faire des liens d'un article vers un autre article du même site. Bon pour le SEO, et permet au lecteur de continuer sa lecture.
+- **`rel="noopener noreferrer nofollow"`** sur les liens sortants : sécurité (noopener/noreferrer) + indication à Google « je ne recommande pas particulièrement ce site, ne donne pas mon autorité SEO à cette page ». Utile sur les sources externes.
+- **CTA** (Call To Action) : bouton d'appel à l'action. Ici, à la fin de chaque article, un bouton orange « Demander mon étude gratuite » qui scrolle vers le formulaire de la page d'accueil.
+- **Breadcrumb** : fil d'Ariane (« Accueil > Blog > Aides solaires »). Aide la navigation et le SEO.
+
+## Étapes clés du prompt (vue d'avion)
+
+1. Initialisation : `git pull origin main --rebase`, backup, vérifier working tree propre.
+2. Lecture contexte : wireframes blog, CSS du site, structure de page secondaire (`merci.html`).
+3. Création du dossier `public_html/blog/` avec 3 fichiers : hub `index.html` + 2 articles aux URL parlantes (`2026-05-aides-solaires-avant-1er-juillet.html` et `2026-05-batterie-virtuelle-attention-jpme.html`).
+4. Rédaction du hub blog : navbar, header, 2 cartes articles avec badges « URGENT » et « ALERTE », CTA en bas.
+5. Article 1 (60 min) : urgence avant la réforme des aides du 1er juillet 2026, 7 sections, 5 FAQ, JSON-LD Article + FAQPage, CTA final.
+6. Article 2 (60 min) : alerte sur les batteries virtuelles à travers le cas JPME, structure similaire.
+7. Ajout du lien « Blog » dans la navbar de `index.html` et `merci.html` (entre Réalisations et Contact).
+8. Validation : structure de dossier, liens internes, balisage `nofollow` sur les externes, validation W3C, commit + push GitHub.
+
+## Pièges à anticiper
+
+- **Le contenu rédactionnel est fourni MOT POUR MOT** dans le prompt. Si tu vois Claude Code reformuler les phrases « pour faire mieux », c'est interdit (instruction explicite : « habiller en HTML uniquement »). Les chiffres (80 €/kWc, 4 c€/kWh, 1,1 c€/kWh) sont sourcés et engageants — pas de drift.
+- **Les 4 liens sortants par article** doivent tous avoir `target="_blank" rel="noopener noreferrer nofollow"`. Sans `nofollow`, tu donnes ton autorité SEO à ces sites externes — c'est dommage pour les sources « informatives » qui ne sont pas tes partenaires.
+- **Le JSON-LD doit être un JSON valide** : une virgule oubliée et Google ne le lit pas. Un validateur officiel existe (`validator.schema.org`) — à passer après upload prod.
+- **Cas JPME** : l'article 2 cite nommément cette société qui s'est fait retirer son autorisation. Les faits sont publics et documentés par le médiateur national de l'énergie, donc pas de risque diffamation. MAIS ne laisse pas Claude Code étendre l'accusation à d'autres fournisseurs cités.
+- **Le push GitHub interactif** peut bloquer sur authentification — même piège que la Session 4. Le commit local restera valide, à pousser manuellement après.
+
+## Mini-quiz d'auto-vérification
+
+1. Pourquoi un JSON-LD `FAQPage` est intéressant pour le SEO d'un article qui contient une section « Foire aux questions » ?
+2. Qu'est-ce qui se passerait si tu oubliais `rel="nofollow"` sur les 4 liens sortants d'un article (vers UFC, Hellio, etc.) — quel effet SEO indésirable ?
+3. Pourquoi est-ce important que les URL des articles soient au format `2026-05-titre-explicite.html` plutôt que `article1.html` ou `?id=1` ?
+
+## Pour aller plus loin (optionnel)
+
+- Schema.org Article : https://schema.org/Article
+- Google — Données structurées FAQ : https://developers.google.com/search/docs/appearance/structured-data/faqpage
+- Open Graph protocol : https://ogp.me/
+
+---
+
+
+
+
 # Prompt Session Blog — pour Claude Code
 
 > **Création du blog Blue Energie : hub + 2 articles SEO fondateurs.**

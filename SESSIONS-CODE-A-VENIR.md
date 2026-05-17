@@ -13,7 +13,7 @@
 | Session 2 — Page /merci.html + GA4 | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-1-2-3.md` |
 | Session 3 — Remplacement Google Maps | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-1-2-3.md` |
 | Session 4 — Mentions légales / CGV / RGPD | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-4.md` |
-| Session 5 — Bandeau cookies tarteaucitron | ⏳ Prompt prêt, à lancer | `PROMPT-SESSION-5.md` |
+| Session 5 — Bandeau cookies tarteaucitron | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-5.md` |
 | Session 6 — Mise à jour catalogue matériel | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-6.md` |
 | Session 7 — Refonte galerie réalisations | ⬜ Partiellement traité dans Session 6 (textes neutralisés). Reste : `loading="lazy"` partout, logos Mylight retirés des images si besoin | à créer |
 | Session 8 — Extraction CSS/JS séparés | ⬜ À faire | à créer |
@@ -32,7 +32,7 @@
 | Session 21 — Article batterie virtuelle JPME | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 22 — Article 3e (au choix) | ⬜ À faire | à créer |
 
-**Synthèse** : 7 sessions déployées (1, 2, 3, 4, 6, Blog hub, Blog article 1, Blog article 2) sur ~22 prévues. Prochaines recommandées : **Session 5 (cookies tarteaucitron)**, **Session 18 (bandeau RGE)**, **Session 14 (SEO technique)**.
+**Synthèse** : 8 sessions déployées (1, 2, 3, 4, 5, 6, Blog hub, Blog article 1, Blog article 2) sur ~22 prévues. Prochaines recommandées : **Session 18 (bandeau RGE)**, **Session 14 (SEO technique)**, **Session 7 (finition galerie)**.
 
 ---
 

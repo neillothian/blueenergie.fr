@@ -1,3 +1,50 @@
+# 🎓 Fiche de révision — Session 1+2+3 : correctifs HTML, page merci, carte OpenStreetMap
+
+> À lire AVANT de lancer le prompt dans Claude Code. Objectif : comprendre ce que la session va faire et pourquoi, pas juste exécuter aveuglément.
+
+Le site blueenergie.fr a 38 problèmes identifiés dans un audit (HTML cassé, redirection morte, code Google Maps inutilisable car sans clé API). Cette session traite les bugs HTML critiques, crée la page de remerciement où atterrissent les prospects après le formulaire, et remplace Google Maps par OpenStreetMap (gratuit, sans clé).
+
+## Ce que tu vas voir passer dans le prompt
+
+- **DOCTYPE** : la toute première ligne `<!DOCTYPE html>` qui dit au navigateur « ce fichier est du HTML5 ». S'il manque, le navigateur passe en « mode bizarre » et le rendu casse. Apparaît à l'Étape 2 modif n°1.
+- **`lang="fr"`** : attribut sur la balise `<html>` qui indique la langue du contenu (utile aux moteurs de recherche et lecteurs d'écran). Étape 2 modif n°2.
+- **`rel="noopener noreferrer"`** : protection sécurité à ajouter sur tout lien externe ouvrant un nouvel onglet (`target="_blank"`). Sans ça, le site cible peut prendre la main sur l'onglet d'origine. Étape 2 modif n°6.
+- **`cp` (commande shell)** : copie un fichier. `cp index.html index.html.backup` = copie de sauvegarde avant de modifier. Étape 0 du prompt.
+- **`grep` (commande shell)** : cherche du texte dans des fichiers. `grep -c "<div"` compte combien de fois apparaît `<div` dans le fichier. Sert ici à vérifier qu'aucune balise n'est laissée ouverte. Étape 5.
+- **`curl` + W3C Validator** : `curl` est un outil terminal qui envoie une requête à un serveur. Ici il envoie le HTML au validateur officiel `validator.w3.org` qui renvoie la liste des erreurs. Étape 5.
+
+## Étapes clés du prompt (vue d'avion)
+
+1. Initialisation : créer une todo list interne, faire une sauvegarde du fichier, snapshot git si possible.
+2. Lecture du contexte : audit, plan des sessions, wireframe de la page merci, index.html complet.
+3. Session 1 — corriger 7 bugs HTML sur `index.html` (DOCTYPE, lang, base, CSS non fermé, redirection morte, liens externes sans sécurité, balises mal fermées).
+4. Session 2 — créer `merci.html` de zéro (page de remerciement après formulaire, avec tracking GA4 de la conversion).
+5. Session 3 — virer tout le bloc Google Maps cassé et coller à la place une iframe OpenStreetMap.
+6. Validation finale : validateur W3C, comptage balises, recherche de références cassées, commit git si disponible.
+
+## Pièges à anticiper
+
+- **Le bloc CSS non fermé ligne ~629** : il manque une accolade `}` avant `</style>`. Si Claude Code rate ça, tout le CSS qui suit reste cassé. Vérifie qu'il rapporte bien « bloc CSS fermé » dans son rapport.
+- **L'iframe OpenStreetMap reste sur les coordonnées 46.0982, 6.0279** (Savigny). Si tu vois d'autres coordonnées dans le rendu final, c'est un signal de problème.
+- **Le tracking GA4 dans `merci.html`** doit déclencher l'événement `generate_lead` — c'est ce qui te permettra de compter les conversions dans Google Analytics. S'il manque, tu ne sauras jamais combien de prospects ont rempli le formulaire.
+- **Backup `index.html.backup-pre-session1`** : conserve-la jusqu'à avoir validé en prod. Si quelque chose casse, c'est ton filet de sécurité.
+
+## Mini-quiz d'auto-vérification
+
+1. À quoi sert exactement `rel="noopener noreferrer"` sur un lien externe, et qu'est-ce qui peut arriver si on l'oublie ?
+2. Pourquoi le prompt demande de faire une copie `index.html.backup-pre-session1` avant toute modification ?
+3. Si après la session, `grep -n "YOUR_GOOGLE_MAPS_API_KEY" public_html/index.html` retourne 1 résultat au lieu de 0, qu'est-ce que ça signifie concrètement pour le site ?
+
+## Pour aller plus loin (optionnel)
+
+- DOCTYPE et HTML5 : https://developer.mozilla.org/fr/docs/Glossary/Doctype
+- `rel="noopener noreferrer"` expliqué : https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/rel/noopener
+
+---
+
+
+
+
 # Prompt Session 1+2+3 — pour Claude Code
 
 > **À coller dans une nouvelle session Claude Code lancée DEPUIS la racine `blueenergie.fr/`.**

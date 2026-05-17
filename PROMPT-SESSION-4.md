@@ -1,3 +1,53 @@
+# 🎓 Fiche de révision — Session 4 : pages légales obligatoires (mentions, CGV, politique de confidentialité)
+
+> À lire AVANT de lancer le prompt dans Claude Code. Objectif : comprendre ce que la session va faire et pourquoi, pas juste exécuter aveuglément.
+
+Tout site commercial français est obligé d'afficher trois pages légales : mentions légales (qui édite le site, qui l'héberge), CGV (les règles commerciales de vente, le droit de rétractation, les garanties) et politique de confidentialité (RGPD : ce que tu fais des données des visiteurs). Sans ces pages, le site est en infraction et tu t'exposes à des sanctions CNIL et à des litiges client impossibles à défendre. Cette session crée les 3 fichiers HTML et ajoute des liens vers eux dans le footer de 5 pages existantes.
+
+## Ce que tu vas voir passer dans le prompt
+
+- **LCEN** (Loi pour la Confiance dans l'Économie Numérique, 2004) : la loi qui rend les mentions légales obligatoires pour tout site français. Article 6 cité dans les mentions.
+- **RGPD** (Règlement Général sur la Protection des Données) : règle européenne 2018 qui impose d'informer les visiteurs sur la collecte de leurs données. C'est ce qui justifie la politique de confidentialité.
+- **`<link rel="canonical">`** : balise dans le `<head>` qui dit aux moteurs de recherche « l'URL officielle de cette page, c'est celle-ci » — évite que Google indexe plusieurs versions d'une même page.
+- **JSON-LD** : mentionné comme « hors scope Session 14 » — ne pas confondre avec ce qu'on fait ici.
+- **`git pull origin main --rebase`** : récupère les modifs distantes (sur GitHub) et rejoue tes commits locaux par-dessus. Tu n'as pas encore appris Git — ici Claude Code l'exécute pour toi, mais c'est important de savoir que ça SYNCHRONISE ton dossier local avec GitHub avant de commencer.
+- **Sous-traitant RGPD** : un prestataire qui traite des données pour ton compte (Hostinger qui héberge, Web3Forms qui transmet ton formulaire, Google Analytics qui mesure l'audience). Doivent être nommés dans la politique de confidentialité.
+- **Médiateur de la consommation** : organisme indépendant qui règle les litiges client à l'amiable. Obligatoire de proposer un médiateur en B2C, même si on n'en a pas encore désigné un nominalement.
+
+## Étapes clés du prompt (vue d'avion)
+
+1. Initialisation : synchroniser le dossier local avec GitHub (`git pull --rebase`), faire un backup, vérifier que le working tree est propre.
+2. Lecture du contexte : repérer dans `index.html` les variables CSS, la navbar, le footer ; jeter un œil à `merci.html` et `blog/index.html` comme références de page secondaire propre.
+3. Création de `mentions-legales.html` : éditeur du site, hébergeur, activité RGE, propriété intellectuelle, etc. (contenu fourni mot pour mot dans le prompt).
+4. Création de `cgv.html` : 12 articles juridiques (objet, devis, rétractation, paiement, garanties, médiation, etc.).
+5. Création de `politique-confidentialite.html` : responsable du traitement, données collectées, finalités RGPD, droits du visiteur, cookies.
+6. Mise à jour du footer dans 5 pages existantes : ajout d'une ligne « Mentions légales · CGV · Politique de confidentialité » sans casser les footers existants.
+7. Validation finale : vérifier que les pages existent et sont > 5 Ko, que les mentions clés (SIRET, CNIL, rétractation) sont bien là, validation W3C, commit + push sur GitHub.
+
+## Pièges à anticiper
+
+- **Données factuelles** : le prompt liste SIRET, RCS, TVA intra, adresse, hébergeur. Si tu vois Claude Code inventer un autre numéro RGE ou un médiateur nommément désigné, c'est interdit — l'instruction est claire « n'invente AUCUNE donnée non listée ».
+- **Le footer existant** est différent sur chaque page (l'accueil a un gros footer riche, `merci.html` a un footer minimal, le blog a son propre style). L'ajout du bloc 3 liens doit s'ADAPTER à chaque footer (couleur du séparateur claire ou foncée selon le fond). Vérifie visuellement après upload.
+- **Push GitHub interactif** : si l'authentification GitHub demande un mot de passe ou un token, Claude Code ne pourra pas répondre. Il s'arrêtera et te signalera « push manuel requis ». Le commit local sera fait, il restera juste à pousser manuellement.
+- **Le SIRET avec extension 00010** est une supposition standard. Vérifie sur https://annuaire-entreprises.data.gouv.fr/entreprise/882483274 avant publication — l'extension exacte peut être 00012 ou 00018.
+
+## Mini-quiz d'auto-vérification
+
+1. Pourquoi le prompt dit-il qu'il ne faut PAS désigner nominalement un médiateur de la consommation dans les CGV, alors que c'est obligatoire en B2C ?
+2. À quoi sert exactement la balise `<link rel="canonical" href="https://blueenergie.fr/cgv.html">` placée dans le `<head>` des 3 pages légales ?
+3. Si tu retires Web3Forms de la liste des sous-traitants RGPD dans la politique de confidentialité, pourquoi c'est un problème juridique ?
+
+## Pour aller plus loin (optionnel)
+
+- Vérifier un SIRET : https://annuaire-entreprises.data.gouv.fr
+- CNIL — Mentions obligatoires d'un site web : https://www.cnil.fr/fr/professionnels-sites-web-cookies-et-autres-traceurs
+- Service-Public — Droit de rétractation à distance : https://www.service-public.fr/particuliers/vosdroits/F10485
+
+---
+
+
+
+
 # Prompt Session 4 — pour Claude Code
 
 > **Création des 3 pages légales obligatoires : mentions légales, CGV, politique de confidentialité.**
