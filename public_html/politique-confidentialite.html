@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de confidentialité | Blue Energie</title>
+    <meta name="description" content="Politique de confidentialité Blue Energie : traitement des données personnelles, base légale, durée de conservation, droits RGPD, cookies analytics.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://blueenergie.fr/politique-confidentialite.html">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #4fc7ef;
+            --primary-orange: #fb9641;
+            --white: #ffffff;
+            --gray-bg: #f9f9f9;
+            --text-dark: #333;
+            --text-soft: #555;
+        }
+
+        body {
+            background: var(--gray-bg);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo a {
+            display: block;
+            height: 100%;
+        }
+
+        .navbar .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+        }
+
+        .navbar li {
+            margin: 0 1.2rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary-orange);
+        }
+
+        .mobile-menu-button {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        main.legal-main {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+            width: 100%;
+        }
+
+        main.legal-main h1 {
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.25;
+        }
+
+        main.legal-main .version {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        main.legal-main h2 {
+            color: var(--primary-blue);
+            font-size: 1.35rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.9rem;
+            line-height: 1.35;
+        }
+
+        main.legal-main p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        main.legal-main p.intro {
+            font-size: 1.05rem;
+            color: var(--text-soft);
+            margin-bottom: 1.5rem;
+        }
+
+        main.legal-main ul {
+            margin: 0.5rem 0 1.25rem 1.5rem;
+            line-height: 1.7;
+        }
+
+        main.legal-main li {
+            margin-bottom: 0.3rem;
+        }
+
+        main.legal-main a {
+            color: var(--primary-orange);
+            text-decoration: underline;
+        }
+
+        main.legal-main a:hover {
+            color: var(--primary-blue);
+        }
+
+        main.legal-main strong {
+            color: var(--text-dark);
+        }
+
+        .info-block {
+            background: var(--white);
+            border-left: 3px solid var(--primary-blue);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .info-block p {
+            margin-bottom: 0.4rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            font-size: 0.95rem;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        .data-table th {
+            background: var(--primary-blue);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        footer {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+        }
+
+        footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-legal-links {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-legal-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .footer-legal-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .mobile-menu-button {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                z-index: 1001;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 4rem 2rem;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+            }
+
+            .navbar ul.active {
+                right: 0;
+            }
+
+            .navbar li {
+                margin: 1rem 0;
+            }
+
+            .navbar .logo {
+                margin-right: auto;
+            }
+
+            main.legal-main h1 {
+                font-size: 1.7rem;
+            }
+
+            main.legal-main h2 {
+                font-size: 1.2rem;
+            }
+
+            .data-table {
+                font-size: 0.85rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEG722VJTV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JEG722VJTV');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/" aria-label="Retour à l'accueil Blue Energie">
+                <img src="images/Logo-blue-energie.png" alt="Blue Energie logo" height="50">
+            </a>
+        </div>
+        <button class="mobile-menu-button" aria-label="Menu">☰</button>
+        <ul>
+            <li><a href="/#processus">Processus</a></li>
+            <li><a href="/#etude">Etude</a></li>
+            <li><a href="/#materiel">Matériel</a></li>
+            <li><a href="/#realisations">Réalisations</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="legal-main">
+        <h1>Politique de confidentialité</h1>
+        <p class="version">Version applicable au 17 mai 2026</p>
+
+        <p class="intro">La présente Politique de confidentialité a pour objet d'informer les utilisateurs du site <a href="https://blueenergie.fr">https://blueenergie.fr</a> sur la manière dont leurs données personnelles sont collectées, utilisées, conservées et protégées par la société Blue Energie, conformément au Règlement (UE) 2016/679 du 27 avril 2016 (« RGPD ») et à la loi française n° 78-17 du 6 janvier 1978 modifiée dite « Informatique et Libertés ».</p>
+
+        <h2>1. Responsable du traitement</h2>
+        <p>Le responsable du traitement des données personnelles collectées sur le site est :</p>
+        <div class="info-block">
+            <p><strong>Blue Energie (SAS)</strong></p>
+            <p>11 Chemin de Perouza, 74520 Savigny</p>
+            <p>Représentée par Neil Lothian, Président</p>
+            <p>Email : <a href="mailto:neil.lothian@blueenergie.fr">neil.lothian@blueenergie.fr</a></p>
+            <p>Téléphone : <a href="tel:0761504385">07 61 50 43 85</a></p>
+        </div>
+        <p>La société Blue Energie n'a pas l'obligation de désigner un Délégué à la protection des données (DPO) au sens de l'article 37 du RGPD. Toute question relative au traitement de vos données peut être adressée à l'email ci-dessus.</p>
+
+        <h2>2. Données collectées</h2>
+        <p>Les données personnelles suivantes sont susceptibles d'être collectées lorsque l'utilisateur remplit le formulaire de contact ou de demande d'étude :</p>
+        <ul>
+            <li><strong>Identité :</strong> nom, prénom</li>
+            <li><strong>Coordonnées :</strong> adresse email, numéro de téléphone</li>
+            <li><strong>Adresse postale du projet</strong> (commune, code postal)</li>
+            <li><strong>Informations relatives au projet :</strong> type de logement, surface, consommation électrique annuelle, équipements, message libre</li>
+            <li><strong>Données techniques de navigation</strong> collectées par l'outil d'analyse d'audience : adresse IP (anonymisée), navigateur, système d'exploitation, pages visitées, durée de visite, source de trafic</li>
+        </ul>
+
+        <h2>3. Finalités et bases légales du traitement</h2>
+        <p>Vos données sont collectées pour les finalités suivantes :</p>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Finalité</th>
+                    <th>Base légale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Répondre à votre demande d'étude ou de devis</td>
+                    <td>Mesures précontractuelles à votre demande (RGPD art. 6.1.b)</td>
+                </tr>
+                <tr>
+                    <td>Vous adresser des informations commerciales relatives à nos services</td>
+                    <td>Intérêt légitime (RGPD art. 6.1.f) — vous pouvez vous y opposer à tout moment</td>
+                </tr>
+                <tr>
+                    <td>Mesurer l'audience du site et améliorer son fonctionnement</td>
+                    <td>Consentement préalable (RGPD art. 6.1.a) recueilli via bandeau cookies</td>
+                </tr>
+                <tr>
+                    <td>Respecter nos obligations légales et comptables</td>
+                    <td>Obligation légale (RGPD art. 6.1.c)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>4. Destinataires des données</h2>
+        <p>Vos données sont destinées exclusivement à Blue Energie et à ses collaborateurs habilités. Elles peuvent être communiquées aux sous-traitants suivants, agissant pour le compte de Blue Energie et soumis à des obligations contractuelles de confidentialité et de sécurité :</p>
+        <ul>
+            <li><strong>Hostinger International Ltd</strong> (Chypre) — hébergement du site</li>
+            <li><strong>Web3Forms</strong> (États-Unis, certifié Data Privacy Framework) — service de transmission du formulaire de contact</li>
+            <li><strong>Google Ireland Ltd</strong> (Irlande) — outil d'analyse d'audience Google Analytics 4, sous réserve de votre consentement</li>
+        </ul>
+        <p>Vos données ne sont jamais vendues, louées, ni transmises à des fins commerciales à des tiers.</p>
+
+        <h2>5. Transferts hors Union européenne</h2>
+        <p>Certains sous-traitants (Web3Forms, Google) peuvent être amenés à traiter vos données hors de l'Union européenne. Ces transferts sont encadrés par les garanties appropriées prévues par le RGPD (clauses contractuelles types de la Commission européenne, certification Data Privacy Framework pour les transferts vers les États-Unis).</p>
+
+        <h2>6. Durée de conservation</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Type de données</th>
+                    <th>Durée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Demandes d'étude / devis n'ayant pas donné lieu à une commande</td>
+                    <td>3 ans à compter du dernier contact</td>
+                </tr>
+                <tr>
+                    <td>Données clients (commande signée)</td>
+                    <td>Durée du contrat + 10 ans (obligations légales comptables et garantie décennale)</td>
+                </tr>
+                <tr>
+                    <td>Données de navigation Google Analytics</td>
+                    <td>14 mois maximum</td>
+                </tr>
+                <tr>
+                    <td>Données collectées via les cookies</td>
+                    <td>Selon la durée propre à chaque cookie (cf. section 9)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>7. Sécurité</h2>
+        <p>Blue Energie met en œuvre les mesures techniques et organisationnelles appropriées pour garantir un niveau de sécurité adapté au risque, notamment :</p>
+        <ul>
+            <li>Hébergement sur serveurs sécurisés</li>
+            <li>Connexion HTTPS systématique (certificat SSL/TLS)</li>
+            <li>Accès aux données limité aux personnes habilitées</li>
+            <li>Mots de passe robustes et renouvelés régulièrement</li>
+        </ul>
+
+        <h2>8. Vos droits</h2>
+        <p>Conformément au RGPD, vous disposez à tout moment des droits suivants sur vos données personnelles :</p>
+        <ul>
+            <li><strong>Droit d'accès :</strong> obtenir la communication des données vous concernant</li>
+            <li><strong>Droit de rectification :</strong> corriger des données inexactes</li>
+            <li><strong>Droit à l'effacement</strong> (« droit à l'oubli ») : demander la suppression de vos données</li>
+            <li><strong>Droit à la limitation</strong> du traitement</li>
+            <li><strong>Droit d'opposition</strong> au traitement</li>
+            <li><strong>Droit à la portabilité :</strong> récupérer vos données dans un format structuré</li>
+            <li><strong>Droit de retirer votre consentement</strong> à tout moment lorsque le traitement repose sur ce fondement</li>
+            <li><strong>Droit de définir des directives</strong> relatives au sort de vos données après votre décès</li>
+        </ul>
+        <p>Pour exercer ces droits, adressez une demande écrite à <a href="mailto:neil.lothian@blueenergie.fr">neil.lothian@blueenergie.fr</a> ou par courrier au siège social, accompagnée d'un justificatif d'identité. Une réponse vous sera adressée dans un délai maximum d'un mois.</p>
+        <p>Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL :</p>
+        <div class="info-block">
+            <p><strong>Commission Nationale de l'Informatique et des Libertés (CNIL)</strong></p>
+            <p>3 place de Fontenoy — TSA 80715</p>
+            <p>75334 Paris cedex 07</p>
+            <p>Téléphone : 01 53 73 22 22</p>
+            <p>Site web : <a href="https://www.cnil.fr" rel="noopener" target="_blank">https://www.cnil.fr</a></p>
+        </div>
+
+        <h2>9. Cookies</h2>
+        <p>Le site <a href="https://blueenergie.fr">https://blueenergie.fr</a> utilise des cookies pour assurer son bon fonctionnement et, sous réserve de votre consentement, pour mesurer son audience.</p>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Cookie</th>
+                    <th>Émetteur</th>
+                    <th>Finalité</th>
+                    <th>Durée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>_ga, _ga_*</td>
+                    <td>Google Analytics 4</td>
+                    <td>Mesure d'audience</td>
+                    <td>13 mois</td>
+                </tr>
+                <tr>
+                    <td>Cookie de consentement</td>
+                    <td>Blue Energie</td>
+                    <td>Mémoriser vos choix</td>
+                    <td>6 mois</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Vous pouvez à tout moment modifier vos préférences de cookies en cliquant sur le lien « Gérer mes cookies » présent en pied de page (à venir). En l'absence de bandeau de gestion des cookies au moment de votre visite, vous pouvez désactiver Google Analytics depuis les paramètres de votre navigateur ou installer l'extension officielle de désactivation : <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank">https://tools.google.com/dlpage/gaoptout</a></p>
+
+        <h2>10. Modification de la présente politique</h2>
+        <p>Blue Energie se réserve le droit de modifier la présente Politique de confidentialité à tout moment, notamment pour tenir compte d'évolutions législatives ou techniques. La date de dernière mise à jour figure en tête de document. Nous vous invitons à consulter régulièrement cette page.</p>
+    </main>
+
+    <footer>
+        <p>Blue Energie - Solutions Photovoltaïques</p>
+        <p>Téléphone : <a href="tel:0761504385">07 61 50 43 85</a></p>
+        <p>Email : <a href="mailto:neil.lothian@blueenergie.fr">neil.lothian@blueenergie.fr</a></p>
+        <p><a href="/">Retour à l'accueil</a></p>
+        <div class="footer-legal-links">
+            <a href="/mentions-legales.html">Mentions légales</a>
+            &nbsp;·&nbsp;
+            <a href="/cgv.html">CGV</a>
+            &nbsp;·&nbsp;
+            <a href="/politique-confidentialite.html">Politique de confidentialité</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.mobile-menu-button');
+            const navMenu = document.querySelector('.navbar ul');
+            const navLinks = document.querySelectorAll('.navbar ul a');
+
+            menuButton.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                menuButton.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

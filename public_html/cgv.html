@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions Générales de Vente | Blue Energie</title>
+    <meta name="description" content="Conditions générales de vente (CGV) applicables aux prestations d'installation photovoltaïque réalisées par Blue Energie auprès des particuliers. Délai de rétractation, garanties, paiement, médiation.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://blueenergie.fr/cgv.html">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #4fc7ef;
+            --primary-orange: #fb9641;
+            --white: #ffffff;
+            --gray-bg: #f9f9f9;
+            --text-dark: #333;
+            --text-soft: #555;
+        }
+
+        body {
+            background: var(--gray-bg);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo a {
+            display: block;
+            height: 100%;
+        }
+
+        .navbar .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+        }
+
+        .navbar li {
+            margin: 0 1.2rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary-orange);
+        }
+
+        .mobile-menu-button {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        main.legal-main {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+            width: 100%;
+        }
+
+        main.legal-main h1 {
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.25;
+        }
+
+        main.legal-main .version {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        main.legal-main h2 {
+            color: var(--primary-blue);
+            font-size: 1.35rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.9rem;
+            line-height: 1.35;
+        }
+
+        main.legal-main p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        main.legal-main ul {
+            margin: 0.5rem 0 1.25rem 1.5rem;
+            line-height: 1.7;
+        }
+
+        main.legal-main li {
+            margin-bottom: 0.3rem;
+        }
+
+        main.legal-main a {
+            color: var(--primary-orange);
+            text-decoration: underline;
+        }
+
+        main.legal-main a:hover {
+            color: var(--primary-blue);
+        }
+
+        main.legal-main strong {
+            color: var(--text-dark);
+        }
+
+        .alert-block {
+            background: var(--white);
+            border-left: 3px solid var(--primary-orange);
+            padding: 1rem 1.5rem;
+            margin: 1.25rem 0;
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .alert-block p {
+            margin-bottom: 0;
+        }
+
+        footer {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+        }
+
+        footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-legal-links {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-legal-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .footer-legal-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .mobile-menu-button {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                z-index: 1001;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 4rem 2rem;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+            }
+
+            .navbar ul.active {
+                right: 0;
+            }
+
+            .navbar li {
+                margin: 1rem 0;
+            }
+
+            .navbar .logo {
+                margin-right: auto;
+            }
+
+            main.legal-main h1 {
+                font-size: 1.7rem;
+            }
+
+            main.legal-main h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEG722VJTV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JEG722VJTV');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/" aria-label="Retour à l'accueil Blue Energie">
+                <img src="images/Logo-blue-energie.png" alt="Blue Energie logo" height="50">
+            </a>
+        </div>
+        <button class="mobile-menu-button" aria-label="Menu">☰</button>
+        <ul>
+            <li><a href="/#processus">Processus</a></li>
+            <li><a href="/#etude">Etude</a></li>
+            <li><a href="/#materiel">Matériel</a></li>
+            <li><a href="/#realisations">Réalisations</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="legal-main">
+        <h1>Conditions Générales de Vente</h1>
+        <p class="version">Version applicable au 17 mai 2026</p>
+
+        <h2>Article 1 — Objet et champ d'application</h2>
+        <p>Les présentes Conditions Générales de Vente (ci-après « CGV ») régissent les relations contractuelles entre la société Blue Energie, Société par actions simplifiée au capital de 18 000 €, immatriculée au RCS d'Annecy sous le numéro 882 483 274, dont le siège social est situé 11 Chemin de Perouza, 74520 Savigny (ci-après « Blue Energie » ou « le Prestataire ») et toute personne physique non commerçante (ci-après « le Client ») commandant une prestation d'installation photovoltaïque ou de stockage d'énergie.</p>
+        <p>Les présentes CGV s'appliquent à toute commande passée par un Client à Blue Energie, à l'exclusion de toutes autres conditions. Le fait pour le Client de signer un devis ou un bon de commande emporte acceptation pleine et entière des présentes CGV.</p>
+        <p>Les présentes CGV sont fournies au Client au plus tard au moment de la signature du devis. Elles peuvent être modifiées à tout moment par Blue Energie ; la version applicable est celle en vigueur à la date de signature du devis.</p>
+
+        <h2>Article 2 — Devis et formation du contrat</h2>
+        <p>Tout projet d'installation fait l'objet d'une étude personnalisée et d'un devis détaillé, gratuit et sans engagement, valable 30 jours à compter de sa date d'émission.</p>
+        <p>Le devis précise notamment :</p>
+        <ul>
+            <li>La désignation et les caractéristiques techniques du matériel (modules, onduleur, batterie le cas échéant, structure)</li>
+            <li>La puissance crête installée (en kWc)</li>
+            <li>Le prix unitaire et le prix total HT et TTC</li>
+            <li>Le taux de TVA applicable (10 % pour les installations ≤ 3 kWc en résidence principale, 20 % au-delà — selon réglementation en vigueur)</li>
+            <li>Le délai d'exécution</li>
+            <li>Les conditions de paiement</li>
+            <li>Les aides publiques estimées (à titre indicatif)</li>
+        </ul>
+        <p>Le contrat est formé à la date à laquelle le Client retourne à Blue Energie le devis daté et signé, accompagné de l'acompte mentionné à l'article 4.</p>
+
+        <h2>Article 3 — Droit de rétractation</h2>
+        <p>Conformément aux articles L.221-18 et suivants du Code de la consommation, lorsque le contrat est conclu hors établissement (au domicile du Client) ou à distance, le Client dispose d'un délai de <strong>14 jours calendaires</strong> à compter de la signature du devis pour exercer son droit de rétractation, sans avoir à motiver sa décision ni à supporter d'autres coûts que ceux prévus par la loi.</p>
+        <p>Pour exercer ce droit, le Client adresse à Blue Energie, avant l'expiration du délai, une déclaration sans ambiguïté exprimant sa volonté de se rétracter. Il peut utiliser le formulaire-type de rétractation mis à sa disposition sur demande à <a href="mailto:neil.lothian@blueenergie.fr">neil.lothian@blueenergie.fr</a>, ou toute autre déclaration dénuée d'ambiguïté (lettre, email).</p>
+        <p>En cas d'exercice du droit de rétractation, Blue Energie rembourse au Client la totalité des sommes versées, dans un délai maximum de 14 jours à compter de la date à laquelle elle est informée de la décision de rétractation.</p>
+        <div class="alert-block">
+            <p><strong>Demande d'exécution anticipée :</strong> si le Client souhaite que les prestations soient exécutées avant la fin du délai de rétractation, il doit en faire la demande expresse et par écrit. Dans ce cas, en cas d'exercice du droit de rétractation après le début d'exécution, le Client devra payer un montant proportionnel à ce qui a été fourni.</p>
+        </div>
+
+        <h2>Article 4 — Conditions de paiement</h2>
+        <p>Le prix de la prestation est payable selon l'échéancier suivant :</p>
+        <ul>
+            <li>Acompte de 30 % à la signature du devis (encaissable uniquement à l'issue du délai de rétractation, sauf demande expresse du Client)</li>
+            <li>Solde de 70 % au plus tard à la fin des travaux, après réception et signature du procès-verbal de réception</li>
+        </ul>
+        <p>Les paiements sont effectués par virement bancaire ou par chèque à l'ordre de Blue Energie.</p>
+        <p>En cas de retard de paiement, et conformément à l'article L.441-10 du Code de commerce, des pénalités de retard seront appliquées au taux légal en vigueur, ainsi qu'une indemnité forfaitaire pour frais de recouvrement.</p>
+
+        <h2>Article 5 — Délais d'exécution</h2>
+        <p>Le délai d'exécution est précisé dans le devis. Il court à compter de la date de réalisation des conditions suivantes :</p>
+        <ul>
+            <li>Encaissement de l'acompte</li>
+            <li>Obtention de l'autorisation d'urbanisme (déclaration préalable accordée ou tacitement acquise)</li>
+            <li>Acceptation de la convention de raccordement par Enedis</li>
+        </ul>
+        <p>Blue Energie s'engage à informer le Client de l'avancement des démarches administratives et à respecter les délais annoncés sauf cas de force majeure ou de cause indépendante de sa volonté (intempéries, défaillance d'un fournisseur, retards Enedis, etc.).</p>
+
+        <h2>Article 6 — Réception des travaux</h2>
+        <p>À l'achèvement des travaux, un procès-verbal de réception est établi contradictoirement entre Blue Energie et le Client. La réception peut être prononcée avec ou sans réserves. En cas de réserves, Blue Energie s'engage à lever les réserves dans un délai raisonnable.</p>
+        <p>La mise en service de l'installation est soumise à la validation de l'attestation de conformité électrique (Consuel) et à la mise en service du compteur de production par Enedis.</p>
+
+        <h2>Article 7 — Garanties</h2>
+        <p>L'installation et le matériel posés par Blue Energie bénéficient des garanties suivantes :</p>
+        <p><strong>Garantie légale de conformité</strong> (articles L.217-3 et suivants du Code de la consommation) : le Client dispose d'un délai de 2 ans à compter de la délivrance du bien pour agir.</p>
+        <p><strong>Garantie légale des vices cachés</strong> (articles 1641 et suivants du Code civil) : le Client dispose d'un délai de 2 ans à compter de la découverte du vice pour agir.</p>
+        <p><strong>Garantie décennale</strong> (article 1792 du Code civil) : Blue Energie a souscrit une assurance couvrant sa garantie décennale pour les dommages compromettant la solidité de l'ouvrage ou le rendant impropre à sa destination. Cette garantie est de 10 ans à compter de la réception des travaux.</p>
+        <p><strong>Garanties commerciales constructeurs :</strong> les équipements installés (modules photovoltaïques, onduleur, batterie, structure) bénéficient des garanties constructeur, transmises au Client à la livraison. Les durées et conditions de ces garanties varient selon les marques et sont précisées sur les fiches techniques fournies.</p>
+
+        <h2>Article 8 — Responsabilité</h2>
+        <p>Blue Energie s'engage à exécuter ses prestations dans le respect des règles de l'art et des normes en vigueur (norme NF C 15-100, guide UTE C 15-712 pour le photovoltaïque, etc.).</p>
+        <p>La responsabilité de Blue Energie ne saurait être engagée en cas de :</p>
+        <ul>
+            <li>Mauvaise utilisation de l'installation par le Client ou par un tiers</li>
+            <li>Intervention sur l'installation par un tiers non autorisé par Blue Energie</li>
+            <li>Cas de force majeure (intempéries exceptionnelles, événements politiques, sanitaires, etc.)</li>
+            <li>Défaut imputable à un sous-traitant désigné par le Client</li>
+            <li>Inadéquation de l'installation existante (charpente, tableau électrique) avec les recommandations de Blue Energie lorsque le Client a refusé les travaux complémentaires préconisés</li>
+        </ul>
+
+        <h2>Article 9 — Aides publiques</h2>
+        <p>Blue Energie informe le Client, à titre indicatif et selon la réglementation en vigueur au jour du devis, des aides publiques mobilisables (prime à l'autoconsommation, tarif de rachat du surplus, TVA réduite à 10 %, etc.).</p>
+        <p>L'attribution effective de ces aides relève des organismes compétents (EDF Obligation d'Achat, Direction Générale des Finances Publiques, etc.) et reste soumise aux conditions d'éligibilité du Client et aux évolutions réglementaires intervenant entre la signature du devis et la mise en service.</p>
+        <p>Blue Energie ne peut être tenue responsable d'un éventuel refus, d'une réduction ou d'un changement des aides publiques entre la date de signature et la date de versement effectif.</p>
+
+        <h2>Article 10 — Réclamations et médiation de la consommation</h2>
+        <p>En cas de litige, le Client est invité à contacter en premier lieu Blue Energie par écrit à l'adresse <a href="mailto:neil.lothian@blueenergie.fr">neil.lothian@blueenergie.fr</a> ou par courrier au siège social, en exposant les faits et en formulant ses demandes.</p>
+        <p>Conformément aux articles L.616-1 et R.616-1 du Code de la consommation, le Client a la possibilité, après échec d'une démarche amiable, de recourir gratuitement à un médiateur de la consommation en vue d'une résolution amiable du litige.</p>
+        <p>Le Client peut également déposer une réclamation via la plateforme européenne de règlement en ligne des litiges (RLL) : <a href="https://ec.europa.eu/consumers/odr/" rel="noopener" target="_blank">https://ec.europa.eu/consumers/odr/</a></p>
+
+        <h2>Article 11 — Protection des données personnelles</h2>
+        <p>Le traitement des données personnelles du Client est décrit dans la <a href="/politique-confidentialite.html">Politique de confidentialité</a> accessible à l'adresse <a href="https://blueenergie.fr/politique-confidentialite.html">https://blueenergie.fr/politique-confidentialite.html</a>.</p>
+
+        <h2>Article 12 — Droit applicable et juridiction compétente</h2>
+        <p>Les présentes CGV sont soumises au droit français. En cas de litige et après échec d'une résolution amiable ou d'une médiation, les tribunaux français seront seuls compétents.</p>
+    </main>
+
+    <footer>
+        <p>Blue Energie - Solutions Photovoltaïques</p>
+        <p>Téléphone : <a href="tel:0761504385">07 61 50 43 85</a></p>
+        <p>Email : <a href="mailto:neil.lothian@blueenergie.fr">neil.lothian@blueenergie.fr</a></p>
+        <p><a href="/">Retour à l'accueil</a></p>
+        <div class="footer-legal-links">
+            <a href="/mentions-legales.html">Mentions légales</a>
+            &nbsp;·&nbsp;
+            <a href="/cgv.html">CGV</a>
+            &nbsp;·&nbsp;
+            <a href="/politique-confidentialite.html">Politique de confidentialité</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.mobile-menu-button');
+            const navMenu = document.querySelector('.navbar ul');
+            const navLinks = document.querySelectorAll('.navbar ul a');
+
+            menuButton.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                menuButton.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

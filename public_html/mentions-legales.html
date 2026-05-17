@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions légales | Blue Energie</title>
+    <meta name="description" content="Mentions légales de Blue Energie (SAS) — installateur photovoltaïque RGE QualiPV en Haute-Savoie. SIRET, hébergeur, conditions d'utilisation du site.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://blueenergie.fr/mentions-legales.html">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #4fc7ef;
+            --primary-orange: #fb9641;
+            --white: #ffffff;
+            --gray-bg: #f9f9f9;
+            --text-dark: #333;
+            --text-soft: #555;
+        }
+
+        body {
+            background: var(--gray-bg);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo a {
+            display: block;
+            height: 100%;
+        }
+
+        .navbar .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+        }
+
+        .navbar li {
+            margin: 0 1.2rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary-orange);
+        }
+
+        .mobile-menu-button {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        main.legal-main {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+            width: 100%;
+        }
+
+        main.legal-main h1 {
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+        }
+
+        main.legal-main h2 {
+            color: var(--primary-blue);
+            font-size: 1.35rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.9rem;
+            line-height: 1.35;
+        }
+
+        main.legal-main p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        main.legal-main p.intro {
+            font-size: 1.05rem;
+            color: var(--text-soft);
+            margin-bottom: 1.5rem;
+        }
+
+        main.legal-main ul {
+            margin: 0.5rem 0 1.25rem 1.5rem;
+            line-height: 1.7;
+        }
+
+        main.legal-main li {
+            margin-bottom: 0.3rem;
+        }
+
+        main.legal-main a {
+            color: var(--primary-orange);
+            text-decoration: underline;
+        }
+
+        main.legal-main a:hover {
+            color: var(--primary-blue);
+        }
+
+        main.legal-main strong {
+            color: var(--text-dark);
+        }
+
+        .info-block {
+            background: var(--white);
+            border-left: 3px solid var(--primary-blue);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .info-block p {
+            margin-bottom: 0.4rem;
+        }
+
+        footer {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+        }
+
+        footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-legal-links {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-legal-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .footer-legal-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .mobile-menu-button {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                z-index: 1001;
+            }
+
+            .navbar ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                padding: 4rem 2rem;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+            }
+
+            .navbar ul.active {
+                right: 0;
+            }
+
+            .navbar li {
+                margin: 1rem 0;
+            }
+
+            .navbar .logo {
+                margin-right: auto;
+            }
+
+            main.legal-main h1 {
+                font-size: 1.7rem;
+            }
+
+            main.legal-main h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEG722VJTV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JEG722VJTV');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/" aria-label="Retour à l'accueil Blue Energie">
+                <img src="images/Logo-blue-energie.png" alt="Blue Energie logo" height="50">
+            </a>
+        </div>
+        <button class="mobile-menu-button" aria-label="Menu">☰</button>
+        <ul>
+            <li><a href="/#processus">Processus</a></li>
+            <li><a href="/#etude">Etude</a></li>
+            <li><a href="/#materiel">Matériel</a></li>
+            <li><a href="/#realisations">Réalisations</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="legal-main">
+        <h1>Mentions légales</h1>
+
+        <p class="intro">Le présent site <a href="https://blueenergie.fr">https://blueenergie.fr</a> est édité par la société Blue Energie. Les présentes mentions légales sont conformes à l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN).</p>
+
+        <h2>Éditeur du site</h2>
+        <div class="info-block">
+            <p><strong>Raison sociale :</strong> Blue Energie</p>
+            <p><strong>Forme juridique :</strong> Société par actions simplifiée (SAS)</p>
+            <p><strong>Capital social :</strong> 18 000 €</p>
+            <p><strong>Siège social :</strong> 11 Chemin de Perouza, 74520 Savigny, France</p>
+            <p><strong>SIREN :</strong> 882 483 274</p>
+            <p><strong>SIRET :</strong> 882 483 274 00010</p>
+            <p><strong>RCS :</strong> Annecy</p>
+            <p><strong>Numéro de TVA intracommunautaire :</strong> FR25882483274</p>
+            <p><strong>Représentant légal :</strong> Neil Lothian, Président</p>
+            <p><strong>Téléphone :</strong> <a href="tel:0761504385">07 61 50 43 85</a></p>
+            <p><strong>Email :</strong> <a href="mailto:neil.lothian@blueenergie.fr">neil.lothian@blueenergie.fr</a></p>
+        </div>
+
+        <h2>Directeur de la publication</h2>
+        <p>Neil Lothian, en qualité de Président de la SAS Blue Energie.</p>
+
+        <h2>Hébergeur du site</h2>
+        <div class="info-block">
+            <p><strong>Hostinger International Ltd</strong></p>
+            <p>61 Lordou Vironos Street</p>
+            <p>6023 Larnaca, Chypre</p>
+            <p>Site web : <a href="https://www.hostinger.fr" rel="noopener" target="_blank">https://www.hostinger.fr</a></p>
+        </div>
+
+        <h2>Activité professionnelle réglementée</h2>
+        <p>Blue Energie exerce l'activité d'installation d'équipements photovoltaïques résidentiels et de stockage d'énergie.</p>
+        <p><strong>Qualification RGE :</strong> Blue Energie est titulaire de la qualification RGE QualiPV délivrée par l'organisme Qualit'EnR. Le numéro de qualification peut être communiqué sur simple demande à <a href="mailto:neil.lothian@blueenergie.fr">neil.lothian@blueenergie.fr</a> — il est notamment nécessaire pour permettre à nos clients de bénéficier des aides publiques liées à la transition énergétique (prime à l'autoconsommation, MaPrimeRénov', éco-PTZ).</p>
+        <p><strong>Assurance responsabilité civile professionnelle et garantie décennale :</strong> conformément à l'article L.241-1 du Code des assurances, Blue Energie a souscrit une assurance couvrant sa responsabilité civile professionnelle et sa garantie décennale. Les coordonnées de l'assureur peuvent être communiquées sur simple demande écrite.</p>
+
+        <h2>Propriété intellectuelle</h2>
+        <p>L'ensemble des éléments du site (textes, images, graphismes, logo, icônes, sons, logiciels) est la propriété exclusive de Blue Energie ou de ses partenaires, et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.</p>
+        <p>Toute reproduction, représentation, modification, publication, adaptation ou exploitation, totale ou partielle, des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de Blue Energie.</p>
+        <p>Les marques citées sur le site (JA Solar, Solplanet, K2 Systems, Tigo, Qualit'EnR, etc.) sont la propriété de leurs détenteurs respectifs.</p>
+
+        <h2>Liens hypertextes</h2>
+        <p>Le site <a href="https://blueenergie.fr">https://blueenergie.fr</a> peut contenir des liens hypertextes vers d'autres sites internet. Blue Energie n'exerce aucun contrôle sur le contenu de ces sites tiers et ne saurait être tenue responsable de leur contenu ou de leur disponibilité.</p>
+
+        <h2>Données personnelles et cookies</h2>
+        <p>Le traitement des données personnelles collectées via ce site est décrit dans notre <a href="/politique-confidentialite.html">Politique de confidentialité</a>, accessible à l'adresse <a href="https://blueenergie.fr/politique-confidentialite.html">https://blueenergie.fr/politique-confidentialite.html</a>.</p>
+
+        <h2>Crédits</h2>
+        <p>Conception et développement : Blue Energie.<br>
+        Cartographie : OpenStreetMap (© OpenStreetMap contributors, sous licence ODbL).<br>
+        Analyse d'audience : Google Analytics 4.<br>
+        Service de transmission du formulaire de contact : Web3Forms.</p>
+
+        <h2>Droit applicable et juridiction compétente</h2>
+        <p>Les présentes mentions légales sont régies par le droit français. En cas de litige relatif à l'utilisation du site, et après échec d'une résolution amiable, les tribunaux français seront seuls compétents.</p>
+
+        <h2>Mise à jour</h2>
+        <p>Les présentes mentions légales ont été mises à jour le 17 mai 2026. Blue Energie se réserve le droit de les modifier à tout moment, sans préavis.</p>
+    </main>
+
+    <footer>
+        <p>Blue Energie - Solutions Photovoltaïques</p>
+        <p>Téléphone : <a href="tel:0761504385">07 61 50 43 85</a></p>
+        <p>Email : <a href="mailto:neil.lothian@blueenergie.fr">neil.lothian@blueenergie.fr</a></p>
+        <p><a href="/">Retour à l'accueil</a></p>
+        <div class="footer-legal-links">
+            <a href="/mentions-legales.html">Mentions légales</a>
+            &nbsp;·&nbsp;
+            <a href="/cgv.html">CGV</a>
+            &nbsp;·&nbsp;
+            <a href="/politique-confidentialite.html">Politique de confidentialité</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.mobile-menu-button');
+            const navMenu = document.querySelector('.navbar ul');
+            const navLinks = document.querySelectorAll('.navbar ul a');
+
+            menuButton.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                menuButton.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!navMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    menuButton.textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
