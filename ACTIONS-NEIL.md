@@ -155,6 +155,97 @@ Réponds sous forme de tableau structuré :
 
 ---
 
+## ☐ Q11 — Upload Hostinger en attente (rattrapage Sessions 7→18)
+
+**Cible** : synchroniser la prod avec git. **26 fichiers** commités depuis Session 9 mais pas encore en ligne. Tant que ce n'est pas fait, les pages internes renvoient 404 (cassées par le sitemap interne et la nav).
+
+### Mode d'emploi
+
+1. Connecte-toi à hPanel Hostinger → blueenergie.fr → **Gestionnaire de fichiers**.
+2. Le file browser ouvre sur le webroot (le « DO_NOT_UPLOAD_HERE » est trompeur, c'est bien là).
+3. Upload (en respectant l'arborescence) les 26 fichiers ci-dessous depuis le repo local `/Users/neillothian/Documents/Claude/Projects/blueenergie.fr/public_html/`.
+
+#### Fichiers à uploader
+
+**Racine `public_html/`** (10 fichiers — écraser les versions existantes) :
+- `index.html` (Sessions 7, 8, 11, 18)
+- `merci.html` (Session 8)
+- `cgv.html` (Session 18)
+- `mentions-legales.html` (Session 18)
+- `politique-confidentialite.html` (Session 18)
+- `installation-photovoltaique.html` (Session 12 — nouveau)
+- `materiel-panneaux-solaires.html` (Session 12 — nouveau)
+- `realisations.html` (Session 12 — nouveau)
+- `contact.html` (Session 12 — nouveau)
+- `aides-2026.html` (Session 13 — nouveau)
+- `zones-intervention.html` (Session 15 — nouveau)
+- `sitemap.xml` (Session 14 — nouveau)
+- `robots.txt` (Session 14 — nouveau)
+
+**Dossier `assets/css/`** (créer si besoin, 3 fichiers) :
+- `assets/css/main.css`
+- `assets/css/bandeau-confiance.css`
+- `assets/css/merci.css`
+
+**Dossier `assets/js/`** (créer si besoin, 2 fichiers) :
+- `assets/js/main.js`
+- `assets/js/partials-loader.js`
+
+**Dossier `partials/`** (créer, 2 fichiers) :
+- `partials/header.html`
+- `partials/footer.html`
+
+**Dossier `blog/`** (3 fichiers — écraser) :
+- `blog/index.html`
+- `blog/2026-05-aides-solaires-avant-1er-juillet.html`
+- `blog/2026-05-batterie-virtuelle-attention-jpme.html`
+
+**Dossier `images/`** (2 fichiers — écraser, renommage Session 7) :
+- `images/realisation-fullblack-400wc.webp`
+- `images/realisation-bifaciaux-425wc.webp`
+
+**Dossier `zones/`** (créer, 1 fichier) :
+- `zones/annecy.html`
+
+4. Après upload, **vide le cache** (hPanel → Vider le cache).
+
+5. **Vérification** : exécute ces curls (ou demande à Claude) :
+```bash
+for url in installation-photovoltaique.html materiel-panneaux-solaires.html realisations.html contact.html aides-2026.html zones-intervention.html zones/annecy.html sitemap.xml robots.txt; do
+  curl -s -o /dev/null -w "%{http_code}\t$url\n" "https://blueenergie.fr/$url"
+done
+```
+Tous doivent répondre **HTTP 200**.
+
+6. **Search Console** : une fois sitemap.xml en ligne, soumets-le sur https://search.google.com/search-console pour accélérer l'indexation des nouvelles pages.
+
+**Échéance** : ASAP. Tant que ce n'est pas fait, les nouveaux travaux SEO (Session 16 — 14 pages géo) seront inutiles car les liens internes pointent dans le vide.
+
+---
+
+## ☐ Q12 — Arbitrage dropzone
+
+**Cible** : trancher pour les 10 items présents dans `_dropzone/` au 2026-05-19. Audit complet dans le rapport du superviseur (chat).
+
+### À faire / valider
+
+1. **Confirmer intégration** des 3 visuels exploitables :
+   - `photo portrait Neil lothian.jpeg` (1620×2880) → `public_html/images/portrait-neil.jpg` (à redimensionner 400×400 carré + WebP) — usage : bloc auteur articles blog (cf. décision Sessions 20+ dans `QUESTIONS-OUVERTES.md`).
+   - `Ai-LB-G3-Front-Group-1.png` (Solplanet batterie/onduleur, 700×700) → `public_html/images/produits/solplanet-lb-g3.png` — usage : carte matériel Solplanet.
+   - `GALLERY-Solplanet-App02.jpg` (screenshot app Solplanet, 700×700) → `public_html/images/produits/solplanet-app.jpg` — usage : section monitoring app.
+
+2. **Préciser le contenu** des 2 captures d'écran (`Capture d'écran 2026-05-17 à 15.14.38.jpg` + `15.14.56.jpg`) : qu'est-ce que ça montre ? Faut-il les intégrer ou archiver ?
+
+3. **Confirmer archivage** de `IMG-20220423-WA0006.jpg` (photo WhatsApp 2022 basse résolution, source incertaine) → corbeille.
+
+4. **Exfiltrer hors repo** les 4 dossiers clients (`01 Ballabriga`, `74 Collion`, `74 Mauny`, `74 reghem `) qui contiennent **données RGPD sensibles** (devis, mandats Enedis, factures EDF, noms/adresses/téléphones complets). À déplacer dans un dossier local confidentiel (ex : Google Drive, dossier client local hors Git). À faire **toi-même Neil** (Claude ne peut pas exfiltrer hors du repo).
+
+5. **Question** : parmi les photos chantiers de ces 4 dossiers, lesquelles pourraient nourrir une **galerie publique anonymisée** (toiture / onduleur / batterie sans signe distinctif identifiant) pour Sessions 7/12 ? Et l'accord client a-t-il été obtenu pour usage marketing ?
+
+**Échéance** : avant la prochaine session « intégration assets ». Tant que l'arbitrage n'est pas fait, le superviseur ne touche pas au dropzone.
+
+---
+
 ## Légende statuts
 
 - ☐ À faire

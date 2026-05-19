@@ -1,4 +1,4 @@
-# État du projet blueenergie.fr — 2026-05-17 (clôture session pilotage)
+# État du projet blueenergie.fr — 2026-05-19 (clôture session pilotage)
 
 > Snapshot consolidé pour reprise du pilotage en nouvelle session.
 > Ce fichier est la **première lecture obligatoire** de tout nouveau superviseur (humain ou Claude).
@@ -26,26 +26,40 @@
 
 ## Avancement des sessions
 
-✅ **Déployées sur https://blueenergie.fr** (9 sessions) :
-- Sessions 1+2+3 (correctifs HTML critiques, page `/merci.html`, carte OpenStreetMap)
+✅ **Déployées en prod** sur https://blueenergie.fr (au 2026-05-17) :
+- Sessions 1+2+3 (correctifs HTML critiques, `/merci.html`, carte OpenStreetMap)
+- Session 4 (mentions légales + CGV + politique de confidentialité)
+- Session 5 (bandeau cookies tarteaucitron v1.18.x + GA4 conditionnel)
 - Session 6 (catalogue matériel JA Solar / Solplanet / K2 / Tigo + badge prix batterie « < 300 €/kWh »)
+- Session 9 (favicon multi-format + site.webmanifest + og-image + Open Graph + Twitter Card + meta description accueil)
 - Session Blog (hub `/blog/` + 2 articles : aides 2026, batteries virtuelles JPME)
-- Session 4 (mentions légales + CGV + politique de confidentialité + liens footer sur 5 pages) — vérifié live 2026-05-17
-- Session 5 (bandeau cookies tarteaucitron v1.18.x + GA4 conditionnel + lien « Gérer mes cookies » footer) — vérifié live 2026-05-17 (highPrivacy + DenyAllCta actifs)
-- Session 9 (favicon multi-format + site.webmanifest + og-image + Open Graph + Twitter Card + meta description accueil) — déployée 2026-05-17
 
-⚠️ **À reprendre** :
-- Session 18 (bandeau confiance RGE) — code déployé techniquement, rendu visuel KO. À diagnostiquer + correctif ciblé.
+✅ **Commitées sur git mais PAS encore uploadées Hostinger** (action Neil) :
+- Session 7 (galerie réalisations : `loading="lazy"`, renommage Mylight → libellés génériques)
+- Session 8 (extraction CSS/JS vers `assets/` pour index + merci)
+- Session 11 (partials header/footer + JS loader sur index uniquement)
+- Session 12 (4 pages internes : installation, matériel, réalisations, contact + sitemap)
+- Session 13 (page aides-2026 + mini-simulateur JS)
+- Session 14 (JSON-LD LocalBusiness + sitemap.xml + robots.txt)
+- Session 15 (hub `zones-intervention.html` + page modèle `zones/annecy.html`)
+- Session 18 (bandeau confiance + correctif appliqué)
 
-⏳ **Prompt prêt à lancer** :
-- Session 14 (JSON-LD LocalBusiness + sitemap.xml + robots.txt) — `PROMPT-SESSION-14.md`
+→ **26 fichiers public_html/ en attente d'upload**. Détail complet : `ACTIONS-NEIL.md` § Upload Hostinger en attente.
 
-⬜ **Restantes / prioritaires après Session 14** :
-- Session 7 (finition galerie réalisations : `loading="lazy"`, renommage assets Mylight → libellés génériques)
-- Session 17 (avis Google dynamiques) — Place ID `ChIJHUKhFuCfDykRkkLTeN-wm3c` confirmé, clé API Places à fournir
-- Session 10 (formulaire + reCAPTCHA v3) — clés reCAPTCHA à fournir
-- Sessions 11, 12, 13, 15, 16, 22 (cf. dépendances dans `SESSIONS-CODE-A-VENIR.md`)
-- **Mini-session manuelle** : compression des 5 images > 250 KB via https://squoosh.app (détaillée dans `PROMPT-SESSION-9.md` § Notes hors prompt)
+⏳ **Prompts prêts à lancer** (rédigés par superviseur, à exécuter dans une session Claude Code dev) :
+- `PROMPT-SESSION-6-BIS.md` — ajout SolarEdge/Enphase + offre Back-up 600 € HT
+- `PROMPT-SESSION-18-V2.md` — nettoyage bandeau confiance (retire SAS/SIRET/avis Google + « Numéro sur demande »)
+- `PROMPT-SESSION-BLOG-IMAGES.md` — images en-tête sur hub blog + 2 articles
+- `PROMPT-SESSION-16.md` — 14 pages géolocalisées SEO (Tier A × 4, B × 6, C × 4)
+
+📝 **Proposition en attente de validation Neil** :
+- `PROPOSITION-FORMULAIRE.md` — refonte formulaire étude (wizard 4 étapes, carte GPS Leaflet/OSM, upload docs, 12 champs conso mensuels, backend PHP custom). 5 questions à trancher avant rédaction de PROMPT-SESSION-10.md.
+
+⬜ **Sessions restantes après celles ci-dessus** :
+- Session 10 (formulaire refondu + reCAPTCHA v3) — bloquée par validation `PROPOSITION-FORMULAIRE.md` + clés reCAPTCHA
+- Session 17 (avis Google dynamiques) — Place ID confirmé, clé API Places à fournir (cf. `ACTIONS-NEIL.md` Q10)
+- Session 22 (3e article blog — sujet à définir)
+- **Mini-session manuelle** : compression des 5 images > 250 KB via https://squoosh.app
 
 Détail complet : `SESSIONS-CODE-A-VENIR.md` (bloc « État d'avancement » en haut du fichier).
 
@@ -66,7 +80,8 @@ Détail complet : `SESSIONS-CODE-A-VENIR.md` (bloc « État d'avancement » en h
 | `audit-blueenergie.md` | Audit initial du site (38 points identifiés) |
 | `PLAN-REFONTE-SITE.md` | Plan stratégique en 8 chantiers P0/P1/P2 |
 | `WIREFRAMES-PAGES.md` | Structure cible de chaque page (12 pages) |
-| `PROMPT-SESSION-*.md` | Prompts Claude Code archivés (1-2-3, 4, 5, 6, BLOG, 9, 14, 18) |
+| `PROMPT-SESSION-*.md` | Prompts Claude Code archivés (1-2-3, 4, 5, 6, 6-BIS, BLOG, BLOG-IMAGES, 9, 14, 16, 18, 18-V2) |
+| `PROPOSITION-FORMULAIRE.md` | Proposition de refonte du formulaire d'étude (en attente validation Neil) |
 | `note et idees site web - brouillon` | **Brouillon perso Neil** — remarques générales / idées vrac. Gitignoré, hors versionnement, à consulter au besoin. |
 
 ---
@@ -129,7 +144,8 @@ Ignorés par git (`.gitignore` : `*.backup-*`).
 
 ## Risques / vigilances
 
-- **Session 18 (bandeau confiance) — rendu KO** : code en prod mais bug visuel à diagnostiquer. Capture d'écran + description précise du problème côté Neil → on prépare un `PROMPT-SESSION-18-FIX` ciblé.
+- **⚠️ Divergence prod ↔ git (26 fichiers)** : tout ce qui a été commité depuis Session 9 (Sessions 7, 8, 11→15, 18) n'est PAS encore en ligne. Les pages internes (installation, matériel, réalisations, contact, aides-2026, zones/*) renvoient 404. Sitemap.xml et robots.txt aussi en 404 → soumission Search Console à reporter après upload. **Action Neil prioritaire** : cf. `ACTIONS-NEIL.md` § Upload Hostinger en attente.
+- **Dropzone `_dropzone/`** : 10 items en attente d'arbitrage. 4 dossiers clients (`01 Ballabriga`, `74 Collion`, `74 Mauny`, `74 reghem`) contiennent **données RGPD sensibles** (devis, mandats Enedis, factures EDF, noms/adresses/téléphones/emails clients) — à **exfiltrer hors repo** dans un dossier confidentiel local. Photos chantier potentiellement anonymisables (toiture, onduleur, batterie) pourraient nourrir Session 7/12 après accord clients + nettoyage EXIF. Portrait Neil + visuels Solplanet (Ai-LB-G3, GALLERY-Solplanet-App02) intégrables immédiatement. 2 captures d'écran 17/05 = contenu à préciser avec Neil.
 - **Argument commercial « batterie < 300 €/kWh »** : Neil a validé les chiffres (342 €/kWh à 5 kWh, 300 €/kWh dès 10 kWh). Mentionné sur le site avec mention « à partir de 10 kWh ». Si changement de tarif fournisseur, mettre à jour la carte matériel.
 - **Email exposé `neil.lothian@`** : risque de spam, Neil a fait le choix de garder cet email pour l'instant.
 - **Filtrage avis Google négatifs (Session 17)** : risque juridique gris (L.121-1 Code de la consommation). Garde-fous documentés dans `QUESTIONS-OUVERTES.md` § Annexe risque Q16. À basculer en « tout afficher » dès qu'un avis négatif arrive.
