@@ -12,7 +12,10 @@
     <meta property="og:title" content="Aides solaires : la fin d'une époque — Souscrivez avant le 1er juillet 2026">
     <meta property="og:description" content="Le gouvernement supprime la prime à l'autoconsommation et divise par 4 le tarif de rachat du surplus à partir du 1er juillet 2026.">
     <meta property="og:url" content="https://blueenergie.fr/blog/2026-05-aides-solaires-avant-1er-juillet.html">
-    <meta property="og:image" content="https://blueenergie.fr/images/blue-energie-photovoltaique.webp">
+    <meta property="og:image" content="https://blueenergie.fr/blog/images/blog-hero-aides.webp">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="Aides financières solaires 2026 : pile de pièces euros">
     <meta property="og:site_name" content="Blue Energie">
     <meta property="og:locale" content="fr_FR">
     <meta property="article:published_time" content="2026-05-17T08:00:00+02:00">
@@ -27,6 +30,7 @@
       "@type": "Article",
       "headline": "Aides solaires : la fin d'une époque — Souscrivez avant le 1er juillet 2026",
       "description": "Le gouvernement supprime la prime à l'autoconsommation et divise par 4 le tarif de rachat du surplus à partir du 1er juillet 2026.",
+      "image": "https://blueenergie.fr/blog/images/blog-hero-aides.webp",
       "datePublished": "2026-05-17",
       "dateModified": "2026-05-17",
       "author": {
@@ -67,6 +71,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#4fc7ef">
+
+    <link rel="preload" as="image" href="/blog/images/blog-hero-aides.webp">
 
     <style>
         * {
@@ -171,6 +177,28 @@
 
         .breadcrumb a:hover {
             color: var(--primary-orange);
+        }
+
+        .blog-hero {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            overflow: hidden;
+        }
+
+        .blog-hero img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero img {
+                aspect-ratio: 16 / 10;
+            }
         }
 
         article.post {
@@ -589,6 +617,11 @@
     <nav class="breadcrumb" aria-label="Fil d'Ariane">
         <a href="/">Accueil</a> &gt; <a href="/blog/">Blog</a> &gt; Aides solaires : la fin d'une époque
     </nav>
+
+    <figure class="blog-hero">
+      <img src="/blog/images/blog-hero-aides.webp" alt="Aides financières solaires 2026 : pile de pièces euros sur une table claire" width="1600" height="900" fetchpriority="high">
+      <!-- Photo: Mohamed Marey on Unsplash (https://unsplash.com/s/photos/euro-coins-savings) -->
+    </figure>
 
     <article class="post">
         <h1>Aides solaires : la fin d'une époque — Souscrivez avant le 1er juillet 2026</h1>

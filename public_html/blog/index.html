@@ -14,6 +14,10 @@
     <meta property="og:url" content="https://blueenergie.fr/blog/">
     <meta property="og:site_name" content="Blue Energie">
     <meta property="og:locale" content="fr_FR">
+    <meta property="og:image" content="https://blueenergie.fr/blog/images/blog-hero-hub.webp">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="Panneaux solaires photovoltaïques sur toiture en Haute-Savoie">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -107,6 +111,31 @@
             color: var(--primary-blue);
             cursor: pointer;
             padding: 0.5rem;
+        }
+
+        .blog-hero {
+            width: 100%;
+            max-height: 420px;
+            overflow: hidden;
+            margin: 0;
+            background: #1a1a1a;
+        }
+
+        .blog-hero img {
+            width: 100%;
+            height: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero {
+                max-height: 240px;
+            }
+            .blog-hero img {
+                max-height: 240px;
+            }
         }
 
         .blog-header {
@@ -444,6 +473,11 @@
         </div>
       </div>
     </aside>
+
+    <figure class="blog-hero blog-hero--hub">
+      <img src="/blog/images/blog-hero-hub.webp" alt="Panneaux solaires photovoltaïques sur toiture résidentielle en Haute-Savoie" width="1600" height="900" fetchpriority="high">
+      <!-- Photo: Michael Pointner on Unsplash (https://unsplash.com/s/photos/solar-panel-roof) -->
+    </figure>
 
     <header class="blog-header">
         <h1>Blog Blue Energie</h1>
