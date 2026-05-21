@@ -1,4 +1,4 @@
-/* Bandeau de confiance — Session 18 FIX */
+/* Bandeau de confiance — Session 18 FIX / Session 18-V2 (nettoyage) */
 .bandeau-confiance {
   background: #ffffff;                    /* Fond pur pour contraste maximal */
   border-bottom: 2px solid #4fc7ef;      /* Bordure colorée Blue Energie pour visibilité */
@@ -12,12 +12,13 @@
 }
 
 .bandeau-confiance__inner {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   align-items: center;
+  justify-items: center;
 }
 
 .bandeau-confiance__item {
@@ -63,15 +64,10 @@
   margin-top: 0.2rem;
 }
 
-.bandeau-confiance__item--placeholder {
-  opacity: 0.6;
-  font-style: italic;
-}
-
 @media (max-width: 767px) {
   .bandeau-confiance__inner {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem 1rem;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
   .bandeau-confiance {
     font-size: 0.8rem;
@@ -84,12 +80,5 @@
     width: 22px;
     height: 22px;
     font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 380px) {
-  .bandeau-confiance__inner {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
   }
 }

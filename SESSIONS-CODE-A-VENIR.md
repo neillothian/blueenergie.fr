@@ -28,6 +28,7 @@
 | Session 16 — 14 pages géolocalisées SEO | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-16.md` |
 | Session 17 — Avis Google dynamiques | ⬜ À faire (besoin Place ID + clé API) | à créer |
 | Session 18 — Bandeau confiance RGE + décennale | ✅ **DÉPLOYÉ** (correctif appliqué) | `PROMPT-SESSION-18.md` |
+| Session 18-V2 — Nettoyage bandeau confiance | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-18-V2.md` |
 | Session 19 — Hub blog + template | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 20 — Article aides 2026 | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
 | Session 21 — Article batterie virtuelle JPME | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
