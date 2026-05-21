@@ -5,7 +5,7 @@
 
 ---
 
-## État d'avancement (mise à jour 2026-05-17)
+## État d'avancement (mise à jour 2026-05-19)
 
 | Session | Statut | Prompt source |
 |---|---|---|
@@ -24,7 +24,7 @@
 | Session 13 — Page aides 2026 | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-MARATHON.md` |
 | Session 14 — JSON-LD + sitemap + robots.txt | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-14.md` |
 | Session 15 — Hub zones + 1 page géo modèle | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-MARATHON.md` |
-| Session 16 — 9 autres pages géo | ⬜ À faire (besoin validation liste villes) | à créer |
+| Session 16 — 14 pages géolocalisées SEO | ✅ **DÉPLOYÉ** | `PROMPT-SESSION-16.md` |
 | Session 17 — Avis Google dynamiques | ⬜ À faire (besoin Place ID + clé API) | à créer |
 | Session 18 — Bandeau confiance RGE + décennale | ✅ **DÉPLOYÉ** (correctif appliqué) | `PROMPT-SESSION-18.md` |
 | Session 19 — Hub blog + template | ✅ **DÉPLOYÉ** (intégré dans Session Blog) | `PROMPT-SESSION-BLOG.md` |
